@@ -23,7 +23,7 @@ class PermissionController extends Controller
         try {
             $roles = Role::pluck('name', 'id');
 
-            return view('permission', compact('roles'));
+            return view('role/permission', compact('roles'));
         } catch (\Exception $e) {
             $bug = $e->getMessage();
 
@@ -83,10 +83,10 @@ class PermissionController extends Controller
             $permission->syncRoles($request->roles);
 
             if ($permission) {
-                return redirect('permission')->with('success', 'Permission created succesfully!');
+                return redirect('role/permission')->with('success', 'Permission created succesfully!');
             }
 
-            return redirect('permission')->with('error', 'Failed to create permission! Try again.');
+            return redirect('role/permission')->with('error', 'Failed to create permission! Try again.');
         } catch (\Exception $e) {
             $bug = $e->getMessage();
 
@@ -122,7 +122,7 @@ class PermissionController extends Controller
             $delete = $permission->delete();
             $perm = $permission->roles()->delete();
 
-            return redirect('permission')->with('success', 'Permission deleted!');
+            return redirect('role/permission')->with('success', 'Permission deleted!');
         }
 
         return redirect('404');

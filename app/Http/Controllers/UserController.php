@@ -21,7 +21,7 @@ class UserController extends Controller
      */
     public function index(): View
     {
-        return view('users');
+        return view('user/users');
     }
 
     /**
@@ -82,7 +82,7 @@ class UserController extends Controller
         try {
             $roles = Role::pluck('name', 'id');
 
-            return view('create-user', compact('roles'));
+            return view('user/create-user', compact('roles'));
         } catch (\Exception $e) {
             return redirect()->back()->with('error', $e->getMessage());
         }
@@ -109,10 +109,10 @@ class UserController extends Controller
                 // assign new role to the user
                 $user->syncRoles($request->role);
 
-                return redirect('users')->with('success', 'New user created!');
+                return redirect('user/user')->with('success', 'New user created!');
             }
 
-            return redirect('users')->with('error', 'Failed to create new user! Try again.');
+            return redirect('user/users')->with('error', 'Failed to create new user! Try again.');
         } catch (\Exception $e) {
             $bug = $e->getMessage();
 
@@ -135,7 +135,7 @@ class UserController extends Controller
                 $user_role = $user->roles->first();
                 $roles = Role::pluck('name', 'id');
 
-                return view('user-edit', compact('user', 'user_role', 'roles'));
+                return view('user/user-edit', compact('user', 'user_role', 'roles'));
             }
 
             return redirect('404');
@@ -213,6 +213,6 @@ class UserController extends Controller
             return redirect('users')->with('success', 'User removed!');
         }
 
-        return redirect('users')->with('error', 'User not found');
+        return redirect('user/users')->with('error', 'User not found');
     }
 }
