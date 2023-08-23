@@ -1,4 +1,4 @@
-# Radmin: Laravel Dashboard Template Starter
+# Tutor 247: Laravel Dashboard Template Starter
 Radmin Laravel Starter revolutionizes website management with advanced user and role management, a flexible REST API, server-side datatables, data editing, and export options. The Themekit Bootstrap 4 interface makes managing websites a breeze.
 
 ## Basic Installation
