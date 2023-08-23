@@ -35,15 +35,22 @@ Route::get('password/reset/{token}', [ResetPasswordController::class,'showResetF
 Route::post('password/reset', [ResetPasswordController::class,'reset'])->name('password.update');
 
 
+
+
+// *********************************************************************************************
+// *                               Super Admin Routes
+// *********************************************************************************************
 Route::group(['middleware' => 'auth'], function(){
-	// logout route
 	Route::get('/logout', [LoginController::class,'logout']);
-	Route::get('/clear-cache', [HomeController::class,'clearCache']);
+
 
 	// Catagories dashboard route
 	Route::get('/dashboard', function () {
 		return view('pages.dashboard');
 	})->name('dashboard');
+
+    // Profile route
+    Route::get('/profile', function () { return view('pages.profile'); });
 
 	//only those have manage_user permission will get access
 	Route::group(['middleware' => 'can:manage_user'], function(){
@@ -80,11 +87,7 @@ Route::group(['middleware' => 'auth'], function(){
 	Route::get('get-role-permissions-badge', [PermissionController::class,'getPermissionBadgeByRole']);
 
 	// Basic demo routes
-	include('modules/demo.php');
-	// Inventory routes
-	include('modules/inventory.php');
-	// Accounting routes
-	include('modules/accounting.php');
+
 });
 
 

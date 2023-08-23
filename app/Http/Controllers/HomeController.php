@@ -11,11 +11,4 @@ class HomeController extends Controller
     {
         return view('home');
     }
-
-    public function clearCache(): View
-    {
-        Artisan::call('cache:clear');
-
-        return view('clear-cache');
-    }
 }

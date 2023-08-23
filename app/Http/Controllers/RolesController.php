@@ -23,7 +23,7 @@ class RolesController extends Controller
         try {
             $permissions = Permission::pluck('name', 'id');
 
-            return view('roles', compact('permissions'));
+            return view('role/roles', compact('permissions'));
         } catch (\Exception $e) {
             $bug = $e->getMessage();
 
@@ -112,7 +112,7 @@ class RolesController extends Controller
 
             $permissions = Permission::pluck('name', 'id');
 
-            return view('edit-roles', compact('role', 'role_permission', 'permissions'));
+            return view('role/edit-roles', compact('role', 'role_permission', 'permissions'));
         }
 
         return redirect('404');

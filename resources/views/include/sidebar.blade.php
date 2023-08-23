@@ -2,7 +2,7 @@
     <div class="sidebar-header">
         <a class="header-brand" href="{{route('dashboard')}}">
             <div class="logo-img">
-               <img height="30" src="{{ asset('img/logo_white.png')}}" class="header-brand-img" title="RADMIN"> 
+               <img height="30" src="{{ asset('img/logo_white.png')}}" class="header-brand-img" title="RADMIN">
             </div>
         </a>
         <div class="sidebar-action"><i class="ik ik-arrow-left-circle"></i></div>
@@ -13,23 +13,16 @@
         $segment1 = request()->segment(1);
         $segment2 = request()->segment(2);
     @endphp
-    
+
     <div class="sidebar-content">
         <div class="nav-container">
             <nav id="main-menu-navigation" class="navigation-main">
                 <div class="nav-item {{ ($segment1 == 'dashboard') ? 'active' : '' }}">
                     <a href="{{route('dashboard')}}"><i class="ik ik-bar-chart-2"></i><span>{{ __('Dashboard')}}</span></a>
                 </div>
-                <div class="nav-lavel">{{ __('Layouts')}} </div>
-                <div class="nav-item {{ ($segment1 == 'pos') ? 'active' : '' }}">
-                    <a href="{{url('inventory')}}"><i class="ik ik-shopping-cart"></i><span>{{ __('Inventory')}}</span> </a>
-                </div>
-                <div class="nav-item {{ ($segment1 == 'pos') ? 'active' : '' }}">
-                    <a href="{{url('pos')}}"><i class="ik ik-printer"></i><span>{{ __('POS')}}</span> </a>
-                </div>
-                <div class="nav-item {{ ($segment1 == 'accounting') ? 'active' : '' }}">
-                    <a href="{{url('accounting')}}"><i class="ik ik-printer"></i><span>{{ __('Accounting')}}</span> <span class=" badge badge-success badge-right">{{ __('New')}}</span></a>
-                </div>
+
+
+
                 <div class="nav-item {{ ($segment1 == 'users' || $segment1 == 'roles'||$segment1 == 'permission' ||$segment1 == 'user') ? 'active open' : '' }} has-sub">
                     <a href="#"><i class="ik ik-user"></i><span>{{ __('Adminstrator')}}</span></a>
                     <div class="submenu-content">
@@ -54,8 +47,8 @@
                 @include('pages.sidebar-menu')
                 <!-- Include demo pages inside sidebar end-->
 
-            </nav>   
-                
+            </nav>
+
         </div>
     </div>
 </div>
