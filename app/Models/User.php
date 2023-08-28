@@ -57,4 +57,58 @@ class User extends Authenticatable
 
         return $roles;
     }
+    /*
+     Making Table Relations
+    */
+    public function subjects(){
+        return $this->hasmany(Subject::class);
+    }
+
+    public function tutorQualification(){
+        return $this->hasmany(tutorQualification::class);
+    }
+    public function tutorExperience(){
+        return $this->hasmany(tutorExperience::class);
+    }
+    public function tutorAvailibility(){
+        return $this->hasone(tutorAvailibility::class);
+    }
+    public function tutorSubjectOffer(){
+        return $this->hasmany(tutorSubjectOffer::class);
+    }
+    public function booking(){
+        return $this->hasone(Booking::class);
+    }
+    public function creditHours(){
+        return $this->hasmany(creditHours::class);
+    }
+    public function role(){
+        return $this->hasone(Role::class);
+    }
+    public function level(){
+        return $this->hasmany(Level::class);
+    }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
