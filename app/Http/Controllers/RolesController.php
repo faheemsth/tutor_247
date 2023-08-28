@@ -145,7 +145,7 @@ class RolesController extends Controller
             // Sync role permissions
             $role->syncPermissions($request->permissions);
 
-            return redirect('roles')->with('success', 'Role info updated succesfully!');
+            return redirect('role/roles')->with('success', 'Role info updated succesfully!');
         } catch (\Exception $e) {
             $bug = $e->getMessage();
 
@@ -165,7 +165,7 @@ class RolesController extends Controller
             $delete = $role->delete();
             $perm = $role->permissions()->delete();
 
-            return redirect('roles')->with('success', 'Role deleted!');
+            return redirect('role/roles')->with('success', 'Role deleted!');
         }
 
         return redirect('404');

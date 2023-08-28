@@ -52,6 +52,7 @@ class User extends Authenticatable
         $roles = [];
         foreach ($this->getRoleNames() as $key => $role) {
             $roles[$key] = $role;
+
         }
 
         return $roles;

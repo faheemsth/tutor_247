@@ -1,4 +1,4 @@
-<script src="{{ asset('all.js') }}"></script>
+<script src="{{ asset('js/all.js') }}"></script>
 <!-- Stack array for including inline js or scripts -->
 @stack('script')
 
