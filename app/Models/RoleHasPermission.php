@@ -9,9 +9,12 @@ class RoleHasPermission extends Model
 {
     use HasFactory;
     /*
-     Making Table Relations
+     Tables Relationships
     */
     public function permission(){
         return $this->hasone(Permission::class);
+    }
+    public function roles(){
+        return $this->belongsTo(Role::class);
     }
 }

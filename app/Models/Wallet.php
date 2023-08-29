@@ -8,4 +8,10 @@ use Illuminate\Database\Eloquent\Model;
 class Wallet extends Model
 {
     use HasFactory;
+    /*
+     Tables Relationships
+    */
+    public function users(){
+        return $this->belongsTo(User::class);
+    }
 }

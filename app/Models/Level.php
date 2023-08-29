@@ -9,12 +9,15 @@ class Level extends Model
 {
     use HasFactory;
     /*
-     Making Table Relations
+     Tables Relationships
     */
     public function subjects(){
         return $this->hasmany(Subject::class);
     }
     public function tutorSubjectOffer(){
         return $this->hasmany(TutorSubjectOffer::class);
+    }
+    public function users(){
+        return $this->belongsTo(User::class);
     }
 }

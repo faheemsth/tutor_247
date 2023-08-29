@@ -8,4 +8,10 @@ use Illuminate\Database\Eloquent\Model;
 class TutorQualificationAttachement extends Model
 {
     use HasFactory;
+    /*
+     Tables Relationships
+    */
+    public function tutorQualification(){
+        return $this->belongsTo(TutorQualification::class);
+    }
 }

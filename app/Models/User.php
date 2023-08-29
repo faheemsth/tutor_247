@@ -58,7 +58,7 @@ class User extends Authenticatable
         return $roles;
     }
     /*
-     Making Table Relations
+     Tables Relationships
     */
     public function subjects(){
         return $this->hasmany(Subject::class);
@@ -87,6 +87,24 @@ class User extends Authenticatable
     }
     public function level(){
         return $this->hasmany(Level::class);
+    }
+    public function userAccountDetails(){
+        return $this->hasmany(UserAccountDetail::class);
+    }
+    public function wallet(){
+        return $this->hasone(Wallet::class);
+    }
+    public function companyWallet(){
+        return $this->hasone(CompanyWallet::class);
+    }
+    public function transaction(){
+        return $this->hasmany(Transaction::class);
+    }
+    public function orders(){
+        return $this->hasmany(Order::class);
+    }
+    public function tutorReview(){
+        return $this->hasone(TutorReview::class);
     }
 }
 

@@ -3,7 +3,7 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
-use DB;
+use Illuminate\Support\Facades\DB;
 
 class PermissionSeeder extends Seeder
 {
@@ -16,27 +16,27 @@ class PermissionSeeder extends Seeder
     {
         DB::table('permissions')->insert([
             [
-                'id' => 2, 
+                'id' => 2,
                 'name' => 'manage_role',
                 'guard_name' => 'web',
             ],
             [
-                'id' => 3, 
+                'id' => 3,
                 'name' => 'manage_permission',
                 'guard_name' => 'web',
             ],
             [
-                'id' => 4, 
+                'id' => 4,
                 'name' => 'manage_user',
                 'guard_name' => 'web',
             ],
             [
-                'id' => 5, 
+                'id' => 5,
                 'name' => 'manage_sales',
                 'guard_name' => 'web',
             ],
             [
-                'id' => 6, 
+                'id' => 6,
                 'name' => 'manage_projects',
                 'guard_name' => 'web',
             ],

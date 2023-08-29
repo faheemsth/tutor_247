@@ -8,4 +8,13 @@ use Illuminate\Database\Eloquent\Model;
 class TutorReview extends Model
 {
     use HasFactory;
+    /*
+     Tables Relationships
+    */
+    public function users(){
+        return $this->belongsTo(User::class);
+    }
+    public function subjects(){
+        return $this->belongsTo(Subject::class);
+    }
 }

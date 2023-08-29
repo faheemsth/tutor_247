@@ -8,10 +8,13 @@ use Illuminate\Database\Eloquent\Model;
 class Role extends Model
 {
     use HasFactory;
-    /*
-     Making Table Relations
+   /*
+     Tables Relationships
     */
     public function roleHasPermission(){
         return $this->hasone(roleHasPermission::class);
+    }
+    public function users(){
+        return $this->belongsTo(User::class);
     }
 }

@@ -8,4 +8,13 @@ use Illuminate\Database\Eloquent\Model;
 class Order extends Model
 {
     use HasFactory;
+    /*
+     Tables Relationships
+    */
+    public function companyWallet(){
+        return $this->hasone(CompanyWallet::class);
+    }
+    public function users(){
+        return $this->belongsTo(User::class);
+    }
 }

@@ -9,9 +9,12 @@ class TutorQualification extends Model
 {
     use HasFactory;
     /*
-     Making Table Relations
+     Tables Relationships
     */
     public function tutorQualificationAttachement(){
         return $this->hasmany(TutorQualificationAttachement::class);
+    }
+    public function users(){
+        return $this->belongsTo(User::class);
     }
 }
