@@ -39,7 +39,7 @@
                     <div class="col-xl-4 col-lg-6 col-md-7 my-auto p-0">
                         <div class="authentication-form mx-auto">
                             <div class="logo-centered">
-                                <a href=""><img width="150" src="{{ asset('img/logo.png') }}" alt=""></a>
+                                <a href=""><img width="150" src="{{ asset('img/24_7_logo.png') }}" alt=""></a>
                             </div>
                             <p>{{ __('Join us today! It takes only few steps')}}</p>
                             <form action="{{url('register')}}" method="post">

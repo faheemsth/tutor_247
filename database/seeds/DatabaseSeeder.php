@@ -22,20 +22,21 @@ class DatabaseSeeder extends Seeder
     {
 
 
-
+      /*
         $this->call([
            SubjectSeeder::class
         ]);
+        */
 
         //Subject::factory()->count(2)->create();
-            /*
+
         $this->call([
 
-            RoleSeeder::class,
-            PermissionSeeder::class,
+            //RoleSeeder::class,
+            //PermissionSeeder::class,
             UserSeeder::class,
-            RolePermissionSeeder::class,
+            //RolePermissionSeeder::class,
         ]);
-         */
+
     }
 }
