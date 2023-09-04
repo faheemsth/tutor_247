@@ -7,13 +7,13 @@
         <meta name="description" content="">
         <meta name="keywords" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        
+
         <link rel="icon" href="{{ asset('favicon.png') }}"/>
 
         <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:300,400,600,700,800" rel="stylesheet">
-        
+
         <link rel="stylesheet" href="{{ asset('plugins/bootstrap/dist/css/bootstrap.min.css') }}">
-        <link rel="stylesheet" href="{{ asset('plugins/fontawesome-free/css/all.min.css') }}">
+        <link rel="stylesheet" href="{{ asset('plugins/fontawesome-free/css/css/sall.min.css') }}">
         <link rel="stylesheet" href="{{ asset('plugins/ionicons/dist/css/ionicons.min.css') }}">
         <link rel="stylesheet" href="{{ asset('plugins/icon-kit/dist/css/iconkit.min.css') }}">
         <link rel="stylesheet" href="{{ asset('plugins/perfect-scrollbar/css/perfect-scrollbar.css') }}">
@@ -39,7 +39,7 @@
                     <div class="col-xl-4 col-lg-6 col-md-7 my-auto p-0">
                         <div class="authentication-form mx-auto">
                             <div class="logo-centered">
-                                <a href=""><img width="150" src="{{ asset('img/logo.png') }}" alt=""></a>
+                                <a href=""><img width="150" src="{{ asset('img/24_7_logo.png') }}" alt=""></a>
                             </div>
                             <p>{{ __('Join us today! It takes only few steps')}}</p>
                             <form action="{{url('register')}}" method="post">
@@ -80,7 +80,7 @@
                 </div>
             </div>
         </div>
-        
+
         <script src="{{ asset('src/js/vendor/jquery-3.3.1.min.js') }}"></script>
         <script src="{{ asset('plugins/popper.js/dist/umd/popper.min.js') }}"></script>
         <script src="{{ asset('plugins/bootstrap/dist/js/bootstrap.min.js') }}"></script>
