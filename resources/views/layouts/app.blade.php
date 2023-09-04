@@ -57,6 +57,10 @@
 <!-- main js file -->
 <script src="{{ asset('assets/js/main.js') }}"></script>
 
+<script src="{{ asset('assets/js/intlInputPhone.min.js') }}"></script>
+<script src="{{ asset('assets/js/intlInputPhone.js') }}"></script>
+
+
 
 </body>
 </html>

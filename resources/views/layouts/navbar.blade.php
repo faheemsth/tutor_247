@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container-fluid logo-img">
-      <a class="navbar-brand logo-247" href='{{route('index')}}'><img src="./assets/images/247 NEW Logo 1.png" alt="" srcset="" class="img-fluid"></a>
+      <a class="navbar-brand logo-247" href="./index.html"><img src="./assets/images/247 NEW Logo 1.png" alt="" srcset="" class="img-fluid"></a>
       <div class="d-flex align-items-center gap-md-4">
         <div class="dropdown d-lg-none  ">
           <a class="dropdown-toggle me-2 text-dark" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
