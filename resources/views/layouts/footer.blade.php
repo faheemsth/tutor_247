@@ -4,7 +4,7 @@
     <div class="container">
         <div class="row">
             <div class="col-12 col-md-7 pb-3">
-               <a href="./index.html"> <img src="./assets/images/247 NEW Logo 2.png" alt="" srcset="" width="250px"></a>
+               <a href='{{route('index')}}'> <img src="./assets/images/247 NEW Logo 2.png" alt="" srcset="" width="250px"></a>
                 <p class="py-3">
                     Accusamus etidio dignissimos ducimus blanditiis praesentium volupta eleniti atquete corrupti
                     quolores

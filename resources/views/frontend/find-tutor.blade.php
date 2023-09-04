@@ -19,7 +19,7 @@
                 data-bs-toggle="dropdown" aria-expanded="false">
                 <strong>Price low to high</strong>
               </a>
-              <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
+              <ul class="dropdown-menu " aria-labelledby="navbarDarkDropdownMenuLink">
                 <li><a class="dropdown-item" href="#">Action</a></li>
                 <li><a class="dropdown-item" href="#">Another action</a></li>
                 <li><a class="dropdown-item" href="#">Something else here</a></li>
@@ -49,7 +49,7 @@
                   <img src="./assets/images/logo.png">
                   <strong class="pe-2">Select Category</strong>
                 </a>
-                <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
+                <ul class="dropdown-menu" aria-labelledby="navbarDarkDropdownMenuLink">
                   <li><a class="dropdown-item" href="#">Action</a></li>
                   <li><a class="dropdown-item" href="#">Another action</a></li>
                   <li><a class="dropdown-item" href="#">Something else here</a></li>
