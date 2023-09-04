@@ -40,9 +40,13 @@ Route::get('/faq', [FrontendController::class, 'faq'])->name('faq');
 // *********************************************************************************************
 // *                               Signup , Login in and Reset Password Routes
 // *********************************************************************************************
-Route::get('login', [LoginController::class,'showLoginForm'])->name('login');
-Route::post('login', [LoginController::class,'login']);
-Route::post('register', [RegisterController::class,'register']);
+Route::get('/register', [RegisterController::class, 'showRegisterForm'])->name('showRegisterForm');
+
+ Route::get('/login-1', function () { return view('pages.login'); });
+ Route::post('register', [RegisterController::class,'register']);
+ Route::get('login', [LoginController::class,'showLoginForm'])->name('login');
+ Route::post('login', [LoginController::class,'login']);
+
 
 Route::get('password/forget',  function () {
 	return view('pages.forgot-password');
@@ -108,7 +112,6 @@ Route::group(['middleware' => 'auth'], function(){
 });
 
 
-Route::get('/register', function () { return view('pages.register'); });
-Route::get('/login-1', function () { return view('pages.login'); });
+
 
 

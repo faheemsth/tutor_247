@@ -27,19 +27,24 @@ class RoleSeeder extends Seeder
             ],
             [
                 'id' => 3,
-                'name' => 'Project Manager',
+                'name' => 'Tutor',
                 'guard_name' => 'web',
             ],
             [
                 'id' => 4,
-                'name' => 'Sales Manager',
+                'name' => 'Student',
                 'guard_name' => 'web',
             ],
             [
                 'id' => 5,
-                'name' => 'Member',
+                'name' => 'Parent',
                 'guard_name' => 'web',
-            ]
+            ],
+            [
+                'id' => 6,
+                'name' => 'Ogranization',
+                'guard_name' => 'web',
+            ],
         ]);
     }
 }
