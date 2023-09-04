@@ -29,17 +29,7 @@ class PermissionSeeder extends Seeder
                 'id' => 4,
                 'name' => 'manage_user',
                 'guard_name' => 'web',
-            ],
-            [
-                'id' => 5,
-                'name' => 'manage_sales',
-                'guard_name' => 'web',
-            ],
-            [
-                'id' => 6,
-                'name' => 'manage_projects',
-                'guard_name' => 'web',
-            ],
+            ]
         ]);
     }
 }

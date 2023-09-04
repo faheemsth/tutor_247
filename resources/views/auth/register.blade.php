@@ -2,6 +2,36 @@
 
 @section('content')
 
+<style type="text/css">
+  #multistep_form fieldset:not(:first-of-type) {
+    display: none;
+  }
+
+  .text-left-1 {
+    text-align: left !important;
+  }
+
+  .form-1-bottom {
+    top: 507px;
+    right: 57px;
+  }
+
+  .form-3-bottom {
+    top: 310px;
+    z-index: -99;
+  }
+
+  .form-end-1 {
+    right: 130px;
+    bottom: 565px;
+  }
+
+  .form-end-2 {
+    right: 130px;
+    bottom: 565px;
+  }
+</style>
+
 <!-- logo -->
 <div class="container mt-5">
     <div class="row">
@@ -208,3 +238,71 @@
   </div>
   
 @endsection
+
+<script>
+  $(document).ready(function () {
+    var form_count = 1;
+    var total_forms = $("fieldset").length;
+
+    // Hide all fieldsets except the first one
+    $("fieldset:not(:first)").hide();
+
+    // Function to set the progress bar
+    function setProgressBar(curStep) {
+      var percent = (curStep - 1) / (total_forms - 1) * 100;
+      $(".progress-bar")
+        .css("width", percent + "%")
+        .html(percent.toFixed(0) + "%");
+    }
+
+    // Function to show the next step and hide the current step
+    function showNextStep() {
+      var currentFieldset = $("fieldset:visible");
+      var nextFieldset = currentFieldset.next("fieldset");
+
+      if (nextFieldset.length > 0) {
+        currentFieldset.hide();
+        nextFieldset.show();
+        form_count++;
+        setProgressBar(form_count);
+      }
+    }
+
+    // Function to show the previous step and hide the current step
+    function showPreviousStep() {
+      var currentFieldset = $("fieldset:visible");
+      var previousFieldset = currentFieldset.prev("fieldset");
+
+      if (previousFieldset.length > 0) {
+        currentFieldset.hide();
+        previousFieldset.show();
+        form_count--;
+        setProgressBar(form_count);
+      }
+    }
+
+    // Handle the "Next" button click
+    $(".next").click(function () {
+      showNextStep();
+    });
+
+    // Handle the "Previous" button click
+    $(".previous").click(function () {
+      showPreviousStep();
+    });
+
+    // Handle the "Submit" button click (you can adjust this as needed)
+    $(".submit").click(function () {
+      // You can add your form submission logic here
+      alert("Form submitted!");
+    });
+  });
+</script>
+
+
+
+<script>
+  $(document).ready(function () {
+    $('.input-phone').intlInputPhone();
+  })
+</script>
