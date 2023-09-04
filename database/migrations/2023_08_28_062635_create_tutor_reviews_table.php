@@ -17,9 +17,10 @@ return new class extends Migration
             $table->id();
             $table->foreignId('turor_id')->constrained('users');
             $table->foreignId('user_id')->constrained('users');
+            $table->foreignId('subject_id')->constrained('subjects');
+            $table->foreignId('order_id')->constrained('orders');
             $table->integer('rating');
             $table->string('review',255);
-            $table->foreignId('subject_id')->constrained('subjects');
             $table->enum('status',['Active','InActive']);
             $table->timestamps();
         });

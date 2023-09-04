@@ -18,7 +18,7 @@ return new class extends Migration
             $table->foreignId('tutor_id')->constrained('users');
             $table->string('degree_title',255);
             $table->string('institute',255);
-            $table->timestamp('degree_completed');
+            $table->date('degree_completed');
             $table->string('notes',255);
             $table->timestamps();
         });
