@@ -18,6 +18,8 @@ return new class extends Migration
             $table->foreignId('tutor_id')->constrained('users');
             $table->foreignId('student_id')->constrained('users');
             $table->foreignId('subject_id')->constrained('subjects');
+            $table->foreignId('order_id')->constrained('orders');
+            $table->integer('remining_hours');
             $table->enum('status',['Pending','In Process','Completed']);
             $table->timestamps();
         });

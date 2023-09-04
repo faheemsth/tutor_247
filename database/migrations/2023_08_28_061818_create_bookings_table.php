@@ -17,14 +17,14 @@ return new class extends Migration
             $table->id();
             $table->foreignId('tutor_id')->constrained('users');
             $table->foreignId('student_id')->constrained('users');
+            $table->foreignId('order_id')->constrained('orders');
+            $table->foreignId('subject_id')->constrained('subjects');
             $table->date('booking');
             $table->enum('location',['Physical','Virtual']);
             $table->string('meeting_link',100);
             $table->integer('duration');
-            $table->foreignId('subject_id')->constrained('subjects');
             $table->enum('status',['Scheduled','In Process','Completed','Cancelled']);
             $table->string('cnacellation_reason',255);
-            $table->foreignId('order_id')->constrained('orders');
             $table->timestamps();
         });
     }

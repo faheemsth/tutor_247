@@ -5,6 +5,7 @@ use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\Auth\ForgotPasswordController;
 use App\Http\Controllers\Auth\ResetPasswordController;
+use App\Http\Controllers\FrontendController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\RolesController;
@@ -20,9 +21,25 @@ use App\Http\Controllers\PermissionController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('/', function () { return view('home'); });
+
+// *********************************************************************************************
+// *                               Guest Pages Routes
+// *********************************************************************************************
+//Route::get('/', function () { return view('home'); });
+Route::get('/', [FrontendController::class, 'index'])->name('index');
+Route::get('/find-tutor', [FrontendController::class, 'findTutor'])->name('findTutor');
+Route::get('/student-apply-steps', [FrontendController::class, 'studentApplySteps'])->name('studentApplySteps');
+Route::get('/tutor-apply-steps', [FrontendController::class, 'tutorApplySteps'])->name('tutorApplySteps');
+Route::get('/organization-apply-steps', [FrontendController::class, 'organizationApplySteps'])->name('organizationApplySteps');
+Route::get('/prices', [FrontendController::class, 'prices'])->name('prices');
+Route::get('/blogs', [FrontendController::class, 'blogs'])->name('blogs');
+Route::get('/faq', [FrontendController::class, 'faq'])->name('faq');
 
 
+
+// *********************************************************************************************
+// *                               Signup , Login in and Reset Password Routes
+// *********************************************************************************************
 Route::get('login', [LoginController::class,'showLoginForm'])->name('login');
 Route::post('login', [LoginController::class,'login']);
 Route::post('register', [RegisterController::class,'register']);
@@ -93,3 +110,5 @@ Route::group(['middleware' => 'auth'], function(){
 
 Route::get('/register', function () { return view('pages.register'); });
 Route::get('/login-1', function () { return view('pages.login'); });
+
+
