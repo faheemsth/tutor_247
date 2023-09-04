@@ -17,10 +17,10 @@
                   dolore magna aliqua ad minim veniamque.</p>
     
                 <div class="mb-5 pt-2 pb-4">
-                  <a type="button" href="./signup.html" class="btn px-4 py-2 mb-2" style="background:linear-gradient(93.86deg, #063B00 9.41%, #000000 98.3%);
+                  <a type="button" href='{{route('studentApplySteps')}}' class="btn px-4 py-2 mb-2" style="background:linear-gradient(93.86deg, #063B00 9.41%, #000000 98.3%);
                   ;
                   font-size: 16px;color: white; border: none;">Start as student   <i class="fa-solid fa-chevron-right"></i></a>
-                  <a type="button" href="./signup.html" class="btn px-4 py-2 mb-2" style="border: 1px solid lightgray;
+                  <a type="button" href='{{route('tutorApplySteps')}}' class="btn px-4 py-2 mb-2" style="border: 1px solid lightgray;
                   font-size: 16px;font-family:'Outfit', sans-serif;">Join as Tutor
                     <span style="color:rgba(29, 161, 242, 1);">It’s Free <i class="fa-solid fa-exclamation"></i> </span>
                   </a>
@@ -110,7 +110,7 @@
               </div>
             </div>
             <div class="row justify-content--md-center mb-3 subject-card">
-              <div class="col-6 col-lg-3 mb-3">
+              <div class="col-6 col-lg-3 mb-3 px-1 px-md-3">
                 <div class="subj-card text-center py-3"
                   style="border: 2px solid rgb(226, 226, 226); border-radius: 35px;">
                   <div class="subj-card-icon">
@@ -121,7 +121,7 @@
                   <p class="mb-0">89 Students</p>
                 </div>
               </div>
-              <div class="col-6 col-lg-3 mb-3">
+              <div class="col-6 col-lg-3 mb-3 px-1 px-md-3">
                 <div class="subj-card text-center py-3"
                   style="border: 2px solid rgb(226, 226, 226); border-radius: 35px;">
                   <div class="subj-card-icon">
@@ -132,8 +132,8 @@
                   <p class="mb-0">110 Students</p>
                 </div>
               </div>
-              <div class="col-6 col-lg-3">
-                <div class="subj-card text-center py-3"
+              <div class="col-6 col-lg-3 px-1 px-md-3">
+                <div class="subj-card text-center py-3 "
                   style="border: 2px solid rgb(226, 226, 226); border-radius: 35px;">
                   <div class="subj-card-icon">
                     <img src="./assets/images/flask 1.svg" alt="" srcset="">
@@ -143,7 +143,7 @@
                   <p class="mb-0">525 Students</p>
                 </div>
               </div>
-              <div class="col-6 col-lg-3">
+              <div class="col-6 col-lg-3 px-1 px-md-3">
                 <div class="subj-card text-center py-3"
                   style="border: 2px solid rgb(226, 226, 226); border-radius: 35px;">
                   <div class="subj-card-icon">
@@ -157,7 +157,7 @@
             </div>
             <!-- second row  -->
             <div class="row justify-content-center mb-5">
-              <div class="col-6 col-lg-3 mb-3">
+              <div class="col-6 col-lg-3 mb-3 px-1 px-md-3">
                 <div class="subj-card text-center py-3 px-3 px-md-0"
                   style="border: 2px solid rgb(226, 226, 226); border-radius: 35px;">
                   <div class="subj-card-icon">
@@ -168,29 +168,29 @@
                   <p class="mb-0">95 Students</p>
                 </div>
               </div>
-              <div class="col-6 col-lg-3 mb-3">
+              <div class="col-6 col-lg-3 mb-3 px-1 px-md-3">
                 <div class="subj-card text-center py-2"
                   style="border: 2px solid rgb(226, 226, 226); border-radius: 35px; ">
                   <div class="subj-card-icon">
                     <img src="./assets/images/digital-drawing 1.svg" alt="" srcset="">
                   </div>
                   <h4>Scratch Programming</h4>
-                  <p class="mb-0">8 Tutors Available </p>
+                  <p class="mb-0">8 Tutors  Available </p>
                   <p class="mb-0">110 Students</p>
                 </div>
               </div>
-              <div class="col-6 col-lg-3">
+              <div class="col-6 col-lg-3 px-1 px-md-3">
                 <div class="subj-card text-center py-3 px-lg-3 px-xl-0"
                   style="border: 2px solid rgb(226, 226, 226); border-radius: 35px;">
                   <div class="subj-card-icon">
                     <img src="./assets/images/linguistics 1.svg" alt="" srcset="">
                   </div>
-                  <h4>Spoken English</h4>
+                  <h4>Spoken <br class="d-none d-lg-inline-block d-xl-none"> English</h4>
                   <p class="mb-0">4 Tutors Available </p>
                   <p class="mb-0">530 Students</p>
                 </div>
               </div>
-              <div class="col-6 col-lg-3">
+              <div class="col-6 col-lg-3 px-1 px-md-3">
                 <div class="subj-card text-center py-3 px-lg-4 px-xl-0"
                   style="border: 2px solid rgb(226, 226, 226); border-radius: 35px;">
                   <div class="subj-card-icon">
@@ -307,7 +307,7 @@
           </div>
         </div>
         <div class="row py-3 justify-content-center">
-          <div class="col-xl-8 col-md-10 col-12 text-center">
+          <div class="col-xl-8 col-md-10 col-12 text-center ">
     
             <div class="card-center">
               <div>
@@ -315,7 +315,7 @@
                   <div class="card-img-top px-4 pt-3 review-card mx-auto">
                     <p style="font-size: 15px;">The institute boasts an impressive roster of tutors who are not only experts
                       in
-                      their respective fields but also skilled in online teaching methods.
+                      their respective fields but also skilled in online.
                     </p>
                     <div class="card-img-div text-center">
                       <img src="./assets/images/Vector-1.png" class="mx-auto" alt="...">
@@ -381,7 +381,7 @@
                   <div class="card-img-top px-4 pt-3 review-card mx-auto">
                     <p style="font-size: 15px;">The institute boasts an impressive roster of tutors who are not only experts
                       in
-                      their respective fields but also skilled in online teaching methods.
+                      their respective fields but also skilled in online.
                     </p>
                     <div class="card-img-div">
                       <img src="./assets/images/Vector-1.png" class="mx-auto" alt="...">
@@ -398,7 +398,7 @@
                   <div class="card-img-top px-4 pt-3 review-card mx-auto">
                     <p style="font-size: 15px;">The institute boasts an impressive roster of tutors who are not only experts
                       in
-                      their respective fields but also skilled in online teaching methods.
+                      their respective fields but also skilled in online.
                     </p>
                     <div class="card-img-div">
                       <img src="./assets/images/Vector-1.png" class="mx-auto" alt="...">

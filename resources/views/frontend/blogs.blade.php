@@ -7,7 +7,7 @@
 
   <div class="container-fluid mt-5">
     <div class="row justify-content-center text-center py-md-5 ">
-      <img src="./assets/images/Group 162.png" alt="" class="w-25 img-fluid">
+      <img src="./assets/images/Group 162.png" alt="" class="img-fluid" style="width:290px">
       <p class="fs-2 pb-4 fw-bolder" id="text-color">Your go-to guide for education advice.</p>
     </div>
   </div>
@@ -220,7 +220,7 @@
   *                                           Over a 100+ and Last Button Start                                                       *
   ****************************************************************************************************************/ -->
 
-  <div class="row">
+  <div class="row mx-0">
     <div class="col text-center py-5">
       <h1 id="text-color" class="my-4"> <strong>Over a 100+ <br>
           Tutor are Available to Teach you</strong> </h1>
