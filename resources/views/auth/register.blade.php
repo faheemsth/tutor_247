@@ -239,17 +239,3 @@
   </div>
   
 @endsection
-
-<script>
-  $(document).ready(function () {
-    
-  });
-</script>
-
-
-
-<script>
-  $(document).ready(function () {
-    $('.input-phone').intlInputPhone();
-  })
-</script>

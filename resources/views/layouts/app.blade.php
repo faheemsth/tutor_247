@@ -19,7 +19,8 @@
   <!-- font awesome icons -->
   <link rel="stylesheet" href="{{ asset('assets/webicons/css/all.css') }}">
 
-
+  <!-- Styles -->
+  
    <!-- Styles -->
    <link rel="stylesheet" href="{{ asset('assets/css/Login.css') }}">
    <link rel="stylesheet" href="{{ asset('assets/css/card2.css') }}">
