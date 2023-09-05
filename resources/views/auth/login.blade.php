@@ -19,7 +19,7 @@
         </div>
         <!-- card details -->
         <div class="container my-3  d-flex justify-content-center ">
-            <div class="card mb-3 shadow-lg p-3 mb-5 rounded "
+            <div class="card mb-3 shadow-lg p-md-3 mb-5 rounded "
                 style="background-color:  rgba(171, 255, 0, 1);width:750px; ">
                 <div class="row g-0">
 
@@ -97,7 +97,7 @@
         </div>
         <!-- footer tags -->
 
-        <div class="container-fluid" id="col-text">
+        <div class="container-fluid my-5" id="col-text">
             <div class="row justify-content-xl-center align-items-baseline mt-5 pt-5">
                 <div class="col-md-4 col-lg-3">
                     <a href="#"> Need help call us on <strong>+447851012039</strong> or <strong>Email us</strong></a>
