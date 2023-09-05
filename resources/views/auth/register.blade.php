@@ -7,6 +7,16 @@
   #multistep_form fieldset:not(:first-of-type) {
     display: none;
   }
+  .form-control{
+    color: #000;
+    border: 1px solid rgb(66, 66, 66);
+    background-color: white;
+  }
+  .form-control:focus{
+    color: #000;
+    border: 1px solid rgb(66, 66, 66);
+    background-color: white;
+  }
 
   .text-left-1 {
     text-align: left !important;
@@ -20,15 +30,20 @@
     z-index: -99;
   }
   .form-end-1 {
-    top: 36%;
+    top: 36.8%;
     right: 0px;
+    z-index:999;
   }
 
   .form-end-2 {
     top: 49%;
   }
-   @media screen and (max-width:1025px){.form-end-1 {top: 34%;right: 0px;}.form-end-2 {top:46%;}}
-   @media screen and (max-width:770px){.form-end-1 {top: 29%;right: 0px;}.form-end-2 {top:42%; }}
+  #num-field:focus{
+    box-shadow: none;
+
+  }
+   @media screen and (max-width:1025px){.form-end-1 {top: 33.5%;right:66px;}.form-end-2 {top:46%;}}
+   @media screen and (max-width:770px){.form-end-1 {top: 30.1%;right: 0px;text-align:end;}.form-end-2 {top:42%;}}
 </style>
 
 <!-- logo -->
@@ -116,7 +131,7 @@
                 </div>
               </div>
               <div class="row col-2 col-md-1 m-auto">
-                <input type="button" name="password" style="background-color: rgba(0, 150, 255, 1);" class="next btn mt-5" value="Next" id="next2"/>
+                <input type="button" name="password" style="background-color: rgba(0, 150, 255, 1);" class="next btn mt-5 text-white" value="Next" id="next2"/>
               </div>
             </div>
             <div class="form-1-bottom d-none d-md-block mb-5">
@@ -128,24 +143,34 @@
             <div class="panel-body mt-5">
               <h2 class="text-center fs-1" id="text-color"><strong>Add your Phone Number or Email?</strong></h2><br>
               <div class="form-group">
-                <div class="col-12 col-md-6 col-lg-5 row m-auto mb-3">
-                  <div class="input-phone"></div>
+                <div class="col-12 col-md-6 col-lg-4 row m-auto mb-3">
+                  <div class="input-group px-0 px-md-2">
+                    <button class="btn btn-outline-secondary bg-transparents dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" id="num-field" ><span class="flag fr btn-flag"></span><span>+33</span></button>
+                    <ul class="dropdown-menu">
+                      <li><a class="dropdown-item" href="#"></a></li>
+                      <li><a class="dropdown-item" href="#"></a></li>
+                      <li><a class="dropdown-item" href="#"></a></li>
+                      <li><hr class="dropdown-divider"></li>
+                      <li><a class="dropdown-item" href="#"></a></li>
+                    </ul>
+                    <input type="text" class="form-control" placeholder="Phone Number" aria-label="Text input with dropdown button">
+                  </div>
                   <small class="text-secoundry" style="font-size: 18px">We’ll Keep your Number Confidential.
                   </small>
                 </div>
               </div>
               <div class="form-group row">
-                <div class="col-12 col-md-6 col-lg-5 m-auto">
+                <div class="col-12 col-md-6 col-lg-4 m-auto">
                   <input type="email" class="form-control m-auto" id="email" name="email" placeholder="Type Your Email">
                   <div class="form-check mt-3 ms-2">
-                    <input class="form-check-input me-1" type="checkbox" value="" id="flexCheckDefault">
+                    <input class="form-check-input me-1" type="checkbox" value="" id="flexCheckDefault num-field">
                     <label class="form-check-label" for="flexCheckDefault">
                       <strong>I would like to Receive, Tips, and offers by Email</strong>
                     </label>
                   </div>
                 </div>
               </div>
-              <div class="row col-lg-2 col-3  col-md-3 m-auto" style="margin-bottom: 100px !important;">
+              <div class="row col-lg-1 col-3  col-md-2 m-auto" style="margin-bottom: 100px !important;">
                 <input type="button" style="background-color: rgba(0, 150, 255, 1);" name="password" class="next btn mt-5 text-white" value="Next" id="next3"/>
               </div>
               <div class="form-3-bottom position-absolute text-center d-none d-md-block">
@@ -239,17 +264,3 @@
   </div>
   
 @endsection
-
-<script>
-  $(document).ready(function () {
-    
-  });
-</script>
-
-
-
-<script>
-  $(document).ready(function () {
-    $('.input-phone').intlInputPhone();
-  })
-</script>

@@ -41,7 +41,7 @@
                             class="card-body d-flex flex-column justify-content-center align-items-center position-relative">
                             <form method="POST" action="{{ route('login') }}">
                                 @csrf
-                                <div class="form-group my-3">
+                                <div class="form-group" style="margin: 1em;text-align:left;">
                                     <input id="email" type="email" placeholder="Type email address"
                                         class="form-control @error('email') is-invalid @enderror bg-white" name="email"
                                         value="" required autocomplete="email" autofocus>
@@ -79,7 +79,7 @@
                                 </div>
 
 
-                                <div class="d-grid gap-2 col-sm-8 mx-auto">
+                                <div class="d-grid gap-2 col-sm-8 mx-auto mt-5">
                                     <input type="button" class="btn btn-light login-with-password"
                                         value="Log in with Password" />
 
