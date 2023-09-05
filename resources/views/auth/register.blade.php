@@ -1,55 +1,35 @@
 @extends('layouts.app')
 
 @section('content')
-    <style type="text/css">
-        #multistep_form fieldset:not(:first-of-type) {
-            display: none;
-        }
+
+<style type="text/css">
+
+  #multistep_form fieldset:not(:first-of-type) {
+    display: none;
+  }
 
         .text-left-1 {
             text-align: left !important;
         }
 
-        .form-1-bottom {
-            bottom: 4%;
-        }
+  .form-1-bottom {
+    bottom: 4%;
+  }
+  .form-3-bottom{
+    top: 30%;
+    z-index: -99;
+  }
+  .form-end-1 {
+    top: 36%;
+    right: 0px;
+  }
 
-        .form-3-bottom {
-            top: 30%;
-            z-index: -99;
-        }
-
-        .form-end-1 {
-            top: 36%;
-            right: 0px;
-        }
-
-        .form-end-2 {
-            top: 49%;
-        }
-
-        @media screen and (max-width:1025px) {
-            .form-end-1 {
-                top: 34%;
-                right: 0px;
-            }
-
-            .form-end-2 {
-                top: 46%;
-            }
-        }
-
-        @media screen and (max-width:770px) {
-            .form-end-1 {
-                top: 29%;
-                right: 0px;
-            }
-
-            .form-end-2 {
-                top: 42%;
-            }
-        }
-    </style>
+  .form-end-2 {
+    top: 49%;
+  }
+   @media screen and (max-width:1025px){.form-end-1 {top: 34%;right: 0px;}.form-end-2 {top:46%;}}
+   @media screen and (max-width:770px){.form-end-1 {top: 29%;right: 0px;}.form-end-2 {top:42%; }}
+</style>
 
     <!-- logo -->
     <div class="container mt-5">
@@ -138,63 +118,54 @@
                         <input type="hidden" role_id="" name="role_id" class="role_id">
                     </fieldset>
 
-                    <fieldset id="personal">
-                        <div class="panel-body mt-5">
-                            <h2 class="text-center fs-1" id="text-color"><strong>Your Full Name?</strong></h2><br>
-                            <div class="form-group">
-                                <div class="col-10 col-md-5 row m-auto">
-                                    <input type="text" class="form-control m-auto" id="fname" name="fname"
-                                        placeholder="Type Your First & Last Name">
-                                    <small class="text-danger m-auto d-none"><i
-                                            class="fa-solid fa-circle-exclamation"></i> First & Last name are
-                                        Requird!</small>
-                                </div>
-                            </div>
-                            <div class="row col-2 col-md-1 m-auto">
-                                <input type="button" name="password" style="background-color: rgba(0, 150, 255, 1);"
-                                    class="next btn mt-5" value="Next" id="next2" />
-                            </div>
-                        </div>
-                        <div class="form-1-bottom d-none d-md-block mb-5">
-                            <img src="assets/images/form1 bottom.svg" alt="" width="100%" height="auto">
-                        </div>
-                    </fieldset>
+          <fieldset id="personal">
+            <div class="panel-body mt-5">
+              <h2 class="text-center fs-1" id="text-color"><strong>Your Full Name?</strong></h2><br>
+              <div class="form-group">
+                <div class="col-10 col-md-5 row m-auto">
+                  <input type="text" class="form-control m-auto" id="fname" name="fname" placeholder="Type Your First & Last Name">
+                  <small class="text-danger m-auto d-none"><i class="fa-solid fa-circle-exclamation"></i> First & Last name are Requird!</small>
+                </div>
+              </div>
+              <div class="row col-2 col-md-1 m-auto">
+                <input type="button" name="password" style="background-color: rgba(0, 150, 255, 1);" class="next btn mt-5" value="Next" id="next2"/>
+              </div>
+            </div>
+            <div class="form-1-bottom d-none d-md-block mb-5">
+              <img src="assets/images/form1 bottom.svg" alt="" width="100%" height="auto">
+            </div>
+          </fieldset>
 
-                    <fieldset id="contact">
-                        <div class="panel-body mt-5">
-                            <h2 class="text-center fs-1" id="text-color"><strong>Add your Phone Number or Email?</strong>
-                            </h2><br>
-                            <div class="form-group">
-                                <div class="col-12 col-md-6 col-lg-5 row m-auto mb-3">
-                                    <div class="input-phone"></div>
-                                    <small class="text-secoundry" style="font-size: 18px">We’ll Keep your Number
-                                        Confidential.
-                                    </small>
-                                </div>
-                            </div>
-                            <div class="form-group row">
-                                <div class="col-12 col-md-6 col-lg-5 m-auto">
-                                    <input type="email" class="form-control m-auto" id="email" name="email"
-                                        placeholder="Type Your Email">
-                                    <div class="form-check mt-3 ms-2">
-                                        <input class="form-check-input me-1" type="checkbox" value=""
-                                            id="flexCheckDefault">
-                                        <label class="form-check-label" for="flexCheckDefault">
-                                            <strong>I would like to Receive, Tips, and offers by Email</strong>
-                                        </label>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row col-lg-2 col-3  col-md-3 m-auto" style="margin-bottom: 100px !important;">
-                                <input type="button" style="background-color: rgba(0, 150, 255, 1);" name="password"
-                                    class="next btn mt-5 text-white" value="Next" id="next3" />
-                            </div>
-                            <div class="form-3-bottom position-absolute text-center d-none d-md-block">
-                                <img src="assets/images/form3 bottom.svg" alt="" width="90%" height="auto">
-                            </div>
-                        </div>
-
-                    </fieldset>
+          <fieldset id="contact">
+            <div class="panel-body mt-5">
+              <h2 class="text-center fs-1" id="text-color"><strong>Add your Phone Number or Email?</strong></h2><br>
+              <div class="form-group">
+                <div class="col-12 col-md-6 col-lg-5 row m-auto mb-3">
+                  <div class="input-phone"></div>
+                  <small class="text-secoundry" style="font-size: 18px">We’ll Keep your Number Confidential.
+                  </small>
+                </div>
+              </div>
+              <div class="form-group row">
+                <div class="col-12 col-md-6 col-lg-5 m-auto">
+                  <input type="email" class="form-control m-auto" id="email" name="email" placeholder="Type Your Email">
+                  <div class="form-check mt-3 ms-2">
+                    <input class="form-check-input me-1" type="checkbox" value="" id="flexCheckDefault">
+                    <label class="form-check-label" for="flexCheckDefault">
+                      <strong>I would like to Receive, Tips, and offers by Email</strong>
+                    </label>
+                  </div>
+                </div>
+              </div>
+              <div class="row col-lg-2 col-3  col-md-3 m-auto" style="margin-bottom: 100px !important;">
+                <input type="button" style="background-color: rgba(0, 150, 255, 1);" name="password" class="next btn mt-5 text-white" value="Next" id="next3"/>
+              </div>
+              <div class="form-3-bottom position-absolute text-center d-none d-md-block">
+                <img src="assets/images/form3 bottom.svg" alt="" width="90%" height="auto">
+              </div>
+            </div>
+            
+          </fieldset>
 
                     <fieldset id="personal">
                         <div class="panel-body mt-5">
@@ -297,3 +268,17 @@
         </div>
     </div>
 @endsection
+
+<script>
+  $(document).ready(function () {
+    
+  });
+</script>
+
+
+
+<script>
+  $(document).ready(function () {
+    $('.input-phone').intlInputPhone();
+  })
+</script>
