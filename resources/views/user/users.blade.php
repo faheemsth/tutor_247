@@ -47,7 +47,7 @@
                                     <th>{{ __('Name')}}</th>
                                     <th>{{ __('Email')}}</th>
                                     <th>{{ __('Role')}}</th>
-                                    <th>{{ __('Permissions')}}</th>
+                                    <th>{{ __('Status')}}</th>
                                     <th>{{ __('Action')}}</th>
                                 </tr>
                             </thead>

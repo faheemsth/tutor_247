@@ -21,6 +21,7 @@ class UserController extends Controller
      */
     public function index(): View
     {
+        dd('come');
         return view('user/users');
     }
 
@@ -42,14 +43,20 @@ class UserController extends Controller
                 if ($roles) {
                     $badge = implode(' , ', $roles);
                 }
+            var_dump($data);
 
                 return $badge;
             })
-            ->addColumn('permissions', function ($data) {
+            ->addColumn('status', function ($data) {
                 $roles = $data->getAllPermissions();
                 $badges = '';
                 foreach ($roles as $key => $role) {
-                    $badges .= '<span class="badge badge-dark m-1">' . $role->name . '</span>';
+                    $badges .= '<div class="container">
+                    <label class="switch" for="checkbox">
+                      <input type="checkbox" id="checkbox" />
+                      <div class="slider round"></div>
+                    </label>
+                  </div>';
                 }
 
                 return $badges;
