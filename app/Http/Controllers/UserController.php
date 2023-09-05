@@ -21,8 +21,14 @@ class UserController extends Controller
      */
     public function index(): View
     {
+<<<<<<< HEAD
         dd('come');
         return view('user/users');
+=======
+        $users = User::get();
+
+        return view('user/users', ['users' => $users]);
+>>>>>>> a0d28d928b82d29ad3499e952faca01ce268d8af
     }
 
     /**

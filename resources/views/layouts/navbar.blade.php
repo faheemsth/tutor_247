@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container-fluid logo-img">
-      <a class="navbar-brand logo-247" href="./index.html"><img src="./assets/images/247 NEW Logo 1.png" alt="" srcset="" class="img-fluid"></a>
+      <a class="navbar-brand logo-247" href='{{route('index')}}'><img src="./assets/images/247 NEW Logo 1.png" alt="" srcset="" class="img-fluid"></a>
       <div class="d-flex align-items-center gap-md-4">
         <div class="dropdown d-lg-none  ">
           <a class="dropdown-toggle me-2 text-dark" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
@@ -46,7 +46,7 @@
         
         <div class="col-md-2 d-flex justify-content-end align-items-center header-btn gap-1" style="max-width: max-content;">
           <div class="dropdown d-none d-lg-inline-block ">
-            <a class="dropdown-toggle me-2" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+            <a class="dropdown-toggle me-2 text-dark" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
               <img src="assets/images/translation.svg" alt="Translation" width="20" height="auto">
             </a>
             <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink" style=" top: 35px !important;">
@@ -55,7 +55,7 @@
               <li><a class="dropdown-item" href="#">chinese</a></li>
             </ul>
           </div>
-          <a href='{{route('login')}}' class="header-login px-3 py-2 mx-1 btn fw-bold" id="btn-bg" type="submit">Login</a>
+          <a href='{{route('login-roles')}}' class="header-login px-3 py-2 mx-1 btn fw-bold" id="btn-bg" type="submit">Login</a>
           <div class="dropdown">
             <a class="btn px-3 py-2 fw-bold dropdown-toggle" href="#" role="button" id="dropdownMenuLink" style="  background-color: rgba(6, 59, 0, 1);
             color: rgba(255, 255, 255, 1);" data-bs-toggle="dropdown" aria-expanded="false">

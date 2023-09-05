@@ -27,7 +27,7 @@
             <div class="card-body">
                 <h4 class="card-title fw-bold">I am a Student</h4>
                 <p class="card-text">Manage Payments or Lessons for your Child</p>
-                <a href="./student-login.html" class="btn  d-grid gap-2 " style="background-color: #0096FF;">Student Log in</a>
+                <a href='{{route('login')}}' class="btn  d-grid gap-2 " style="background-color: #0096FF;">Student Log in</a>
             </div>
         </div>
         <!-- card3 -->
@@ -38,7 +38,7 @@
             <div class="card-body">
                 <h4 class="card-title fw-bold">I am a Tutor</h4>
                 <p class="card-text">Manage Payments or Lessons for your Child</p>
-                <a href="./student-login.html" class="btn d-grid gap-2 btn-light">Tutor Log in</a>
+                <a href='{{route('login')}}' class="btn d-grid gap-2 btn-light">Tutor Log in</a>
             </div>
         </div>
         <!-- card4 -->
@@ -48,13 +48,13 @@
                 <br>
                 <h4 class="card-title fw-bold">I am a Organization</h4>
                 <p class="card-text">Manage Payments or Lessons for your Child</p>
-                <a href="./student-login.html" class="btn d-grid gap-2 btn-light">Organization Log in</a>
+                <a href='{{route('login')}}' class="btn d-grid gap-2 btn-light">Organization Log in</a>
             </div>
         </div>
     </div>
 
 </div>
-<div class="container mt-5">
+<div class="container my-5">
     <div class="row justify-content-between align-items-center bottom mx-xl-5">
         <div class="mt-2  col-md-7 d-flex justify-content-around flex-wrap">
             <div class="col-12 col-xl-4 "><a href="#" class="text-dark  text-decoration-none">Need help? Call us on
