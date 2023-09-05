@@ -89,4 +89,50 @@ $(function () {
 
 
     $('.input-phone').intlInputPhone();
+
+
+
+
+
+////////////////////////////////////Login////////////////////////////////
+$("#email").on('click', function(){
+    $(".email-error").addClass('d-none');
+})
+
+$("#password").on('click', function(){
+    $(".password-error").addClass('d-none');
+})
+
+$(".login-with-password").on("click", function(){
+    var email = $("#email").val();
+
+    if(email.trim() == ''){
+        $(".email-error").removeClass('d-none');
+        return false;
+    }
+    $(".password-data").removeClass('d-none');
+    
+    $(this).addClass('d-none');
+    $('.login-btn').removeClass('d-none');
+    return false;
+});
+
+
+$('.login-btn').on('click', function(){
+    var password = $("#password").val();
+    if(password.trim() == ''){
+        $(".password-error").removeClass('d-none');
+        return false;
+    }
+
+    return true;
+})
+////////////////////////////////////Login End////////////////////////////////
+
+
+
+
+
+
+
 });

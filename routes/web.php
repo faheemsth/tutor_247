@@ -41,11 +41,14 @@ Route::get('/faq', [FrontendController::class, 'faq'])->name('faq');
 // *                               Signup , Login in and Reset Password Routes
 // *********************************************************************************************
 Route::get('/register', [RegisterController::class, 'showRegisterForm'])->name('showRegisterForm');
+Route::get('/login-roles', [LoginController::class, 'loginRoles'])->name('login-roles');
+Route::get('/login', [LoginController::class,'showLoginForm'])->name('login');
+Route::post('login', [LoginController::class,'login']);
 
- Route::get('/login-1', function () { return view('pages.login'); });
- Route::post('register', [RegisterController::class,'register']);
- Route::get('login', [LoginController::class,'showLoginForm'])->name('login');
- Route::post('login', [LoginController::class,'login']);
+//  Route::get('/login-1', function () { return view('pages.login'); });
+//  Route::post('register', [RegisterController::class,'register']);
+//  Route::get('login', [LoginController::class,'showLoginForm'])->name('login');
+//  Route::post('login', [LoginController::class,'login']);
 
 
 Route::get('password/forget',  function () {
@@ -65,10 +68,16 @@ Route::group(['middleware' => 'auth'], function(){
 	Route::get('/logout', [LoginController::class,'logout']);
 
 
-	// Catagories dashboard route
-	Route::get('/dashboard', function () {
-		return view('pages.dashboard');
-	})->name('dashboard');
+	Route::group(['middleware' => 'can:dashboard|manage_user'], function(){
+		// Catagories dashboard route
+		Route::get('/dashboard', function () {
+			return view('pages.dashboard');
+		})->name('dashboard');
+	});
+
+	
+
+
 
     // Profile route
     Route::get('/profile', function () { return view('pages.profile'); });
