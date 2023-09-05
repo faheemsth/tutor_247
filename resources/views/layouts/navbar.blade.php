@@ -46,7 +46,7 @@
         
         <div class="col-md-2 d-flex justify-content-end align-items-center header-btn gap-1" style="max-width: max-content;">
           <div class="dropdown d-none d-lg-inline-block ">
-            <a class="dropdown-toggle me-2" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+            <a class="dropdown-toggle me-2 text-dark" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
               <img src="assets/images/translation.svg" alt="Translation" width="20" height="auto">
             </a>
             <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink" style=" top: 35px !important;">
