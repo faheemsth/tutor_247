@@ -52,6 +52,16 @@
                                 </tr>
                             </thead>
                             <tbody>
+                                @forelse($users as $user)
+                                        <tr>
+                                            <td>{{ $user->first_name }}</td>
+                                        </tr>
+
+                                @empty
+                                <tr>
+                                    <td>Record not found</td>
+                                </tr>
+                                @endforelse
                             </tbody>
                         </table>
                     </div>
@@ -61,7 +71,6 @@
     </div>
     <!-- push external js -->
     @push('script')
-    <script src="{{ asset('plugins/DataTables/datatables.min.js') }}"></script>
     <script src="{{ asset('plugins/select2/dist/js/select2.min.js') }}"></script>
     <!--server side users table script-->
     <script src="{{ asset('js/custom.js') }}"></script>
