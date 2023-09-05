@@ -1,79 +1,91 @@
-<!doctype html>
-<html class="no-js" lang="en">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title>Login | Laravel Admin Starter Kit - Radmin</title>
-        <meta name="description" content="">
-        <meta name="keywords" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+@extends('layouts.app')
 
-        <link rel="icon" href="{{ asset('favicon.png') }}" type="image/x-icon" />
+@section('content')
+    <div class="container-fluid student-login-title text-center  mt-5">
+        <div class="row">
+            <div class="col">
+                <a href="#" style="text-decoration: none;"><i class="fa-solid fa-arrow-left "
+                        style="font-size: 25px;"></i> </a>
+            </div>
+            <div class="col-5">
+                <h1 class="student-login-title" style="color: rgba(0, 150, 255, 1); font-weight:bold">
+                    Student Log in</h1>
+            </div>
+            <div class="col">
+                <a href="#"><i class="fa-solid fa-xmark" style="font-size: 25px;"></i></a>
 
-        <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:300,400,600,700,800" rel="stylesheet">
+            </div>
 
-        <link rel="stylesheet" href="{{ asset('plugins/bootstrap/dist/css/bootstrap.min.css') }}">
-        <link rel="stylesheet" href="{{ asset('plugins/fontawesome-free/css/css/all.min.css') }}">
-        <link rel="stylesheet" href="{{ asset('plugins/ionicons/dist/css/ionicons.min.css') }}">
-        <link rel="stylesheet" href="{{ asset('plugins/icon-kit/dist/css/iconkit.min.css') }}">
-        <link rel="stylesheet" href="{{ asset('plugins/perfect-scrollbar/css/perfect-scrollbar.css') }}">
-        <link rel="stylesheet" href="{{ asset('dist/css/theme.min.css') }}">
-        <link rel="stylesheet" href="{{ asset('css/style.css') }}">
-        <script src="{{ asset('src/js/vendor/modernizr-2.8.3.min.js') }}"></script>
-    </head>
+        </div>
+        <!-- card details -->
+        <div class="container my-3  d-flex justify-content-center ">
+            <div class="card mb-3 shadow-lg p-3 mb-5 rounded "
+                style="background-color:  rgba(171, 255, 0, 1);width:750px; ">
+                <div class="row g-0">
 
-    <body>
-        <!--[if lt IE 8]>
-            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-        <![endif]-->
+                    <div class="col-md-6 col-border ">
 
-        <div class="auth-wrapper">
-            <div class="container-fluid h-100">
-                <div class="row flex-row h-100">
-                    <div class="col-xl-4 col-lg-4 col-md-4 m-auto">
-                        <div class="authentication-form mx-auto">
-                            <div class="logo-centered">
-                                <a href="http://radmin.rakibhstu.com"><img height="40" src="{{ asset('img/logo.png') }}" alt="RADMIN" ></a>
-                            </div>
-                            <p>Welcome back! </p>
+
+                        <img src="./assets/images/Group.png" alt="" id="bg-shape-box">
+                        <img src="./assets/images/student-char.png" class="img-fluid rounded-start " style="height:200px"
+                            alt="...">
+                        <img src="./assets/images/pencil.png" alt="" id="bg-shape-pancil">
+                        <h5 class="card-title" style="line-height: 2;">I am a Student</h5>
+                        <p class="card-text" style="line-height: 0;">Have Lesson, Message Your Tutor </p>
+                        <p class="card-text" style="line-height: 0;">or Watch Your Lesson Back </p>
+
+                    </div>
+                    <!-- card body details -->
+                    <div class="col-md-6">
+                        <div
+                            class="card-body d-flex flex-column justify-content-center align-items-center position-relative">
                             <form method="POST" action="{{ route('login') }}">
-                            @csrf
-                                <div class="form-group">
-                                    <input id="email" type="email" placeholder="Email" class="form-control @error('email') is-invalid @enderror" name="email" value="admin@test.com" required autocomplete="email" autofocus>
+                                @csrf
+                                <div class="form-group" style="margin: 1em;text-align:left;">
+                                    <input id="email" type="email" placeholder="Type email address"
+                                        class="form-control @error('email') is-invalid @enderror bg-white" name="email"
+                                        value="" required autocomplete="email" autofocus>
                                     <i class="ik ik-user"></i>
                                     @error('email')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
                                         </span>
                                     @enderror
+
+                                    <span class="invalid-error text-danger email-error d-none">Please enter email</span>
                                 </div>
-                                <div class="form-group">
-                                    <input id="password" type="password" placeholder="Password" class="form-control @error('password') is-invalid @enderror" name="password"  value="1234" required>
-                                    <i class="ik ik-lock"></i>
-                                    @error('password')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                                </div>
-                                <div class="row">
-                                    <div class="col text-left">
-                                        <label class="custom-control custom-checkbox">
-                                            <input type="checkbox" class="custom-control-input" id="item_checkbox" name="item_checkbox" value="option1">
-                                            <span class="custom-control-label">&nbsp;Remember Me</span>
-                                        </label>
+
+                                <div class="password-data d-none">
+                                    <div class="form-group">
+                                        <input id="password" type="password" id="password" placeholder="Password"
+                                            class="form-control bg-white @error('password') is-invalid @enderror" name="password"
+                                            value="" required>
+                                        <i class="ik ik-lock"></i>
+                                        @error('password')
+                                            <span class="invalid-feedback" role="alert">
+                                                <strong>{{ $message }}</strong>
+                                            </span>
+                                        @enderror
+
+                                        <span class="invalid-error text-danger password-error d-none">Please enter password</span>
                                     </div>
-                                    <div class="col text-right">
-                                        <a class="btn text-danger" href="{{url('password/forget')}}">
-                                            {{ __('Forgot Password?') }}
-                                        </a>
+
+
+                                    <div class="form-group my-3">
+                                        <input type="checkbox" class="custom-control-input" id="item_checkbox"
+                                            name="item_checkbox" value="option1">
+                                        <span class="custom-control-label">&nbsp;Remember Me</span>
                                     </div>
                                 </div>
-                                <div class="sign-btn text-center">
-                                    <button class="btn btn-custom">Sign In</button>
-                                </div>
-                                <div class="register">
-                                    <p>{{ __('No account?')}} <a href="{{url('register')}}">{{ __('Sign Up')}}</a></p>
+
+
+                                <div class="d-grid gap-2 col-sm-8 mx-auto mt-5">
+                                    <input type="button" class="btn btn-light login-with-password"
+                                        value="Log in with Password" />
+
+                                    <input type="submit" class="btn btn-light login-btn d-none"
+                                        value="Login" />
+                                    <a class="btn btn-primary text-white">Log in with Magic</i></a>
                                 </div>
 
                             </form>
@@ -81,13 +93,32 @@
                     </div>
                 </div>
             </div>
+
         </div>
+        <!-- footer tags -->
 
-        <script src="{{ asset('src/js/vendor/jquery-3.3.1.min.js') }}"></script>
-        <script src="{{ asset('plugins/popper.js/dist/umd/popper.min.js') }}"></script>
-        <script src="{{ asset('plugins/bootstrap/dist/js/bootstrap.min.js') }}"></script>
-        <script src="{{ asset('plugins/perfect-scrollbar/dist/perfect-scrollbar.min.js') }}"></script>
-        <script src="{{ asset('plugins/screenfull/dist/screenfull.js') }}"></script>
-
-    </body>
-</html>
+        <div class="container-fluid" id="col-text">
+            <div class="row justify-content-xl-center align-items-baseline mt-5 pt-5">
+                <div class="col-md-4 col-lg-3">
+                    <a href="#"> Need help call us on <strong>+447851012039</strong> or <strong>Email us</strong></a>
+                </div>
+                <div class="col-md-4 col-lg-2 ">
+                    <a href="#">Help! I'm an <strong>Adult Learn</strong></a>
+                </div>
+                <div class="col-md-4 col-lg-2">
+                    <a href="#">Log in as <strong>Primary Pupil</strong></a>
+                </div>
+                <div class="col-12 col-lg-5 col-xl-3 mt-4 mt-lg-0">
+                    <div class="row">
+                        <div class="">
+                            <a type="button" class="btn btn-success " style="background-color:  #063B00;color: white;">Log
+                                in as Super Admin</a>
+                            <a type="button" class="btn btn-success col-sm"
+                                style="background-color:  #063B00;color: white;">Sign Up</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+@endsection

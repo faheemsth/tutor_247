@@ -39,6 +39,15 @@ class LoginController extends Controller
         $this->middleware('guest')->except('logout');
     }
 
+    public function loginRoles(){
+        return view('auth/loginRoles');
+    }
+
+
+    public function showLoginForm(){
+        return view('auth/login');
+    }
+
     // custom logout function
     // redirect to login page
     public function logout(Request $request)

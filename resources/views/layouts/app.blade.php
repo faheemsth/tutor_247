@@ -19,8 +19,11 @@
   <!-- font awesome icons -->
   <link rel="stylesheet" href="{{ asset('assets/webicons/css/all.css') }}">
 
-
+  <!-- Styles -->
+  
    <!-- Styles -->
+   <link rel="stylesheet" href="{{ asset('assets/css/Login.css') }}">
+   <link rel="stylesheet" href="{{ asset('assets/css/card2.css') }}">
    <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
    <link rel="stylesheet" href="{{ asset('assets/css/findatutor.css') }}">
    <link rel="stylesheet" href="{{ asset('assets/css/find-tutor.css') }}">
