@@ -62,10 +62,10 @@
               Regitration
             </a>
             <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-              <li><a class="dropdown-item" href='{{route('login')}}'>Join as Tutor</a></li>
-              <li><a class="dropdown-item" href='{{route('login')}}'>Join as Student</a></li>
-              <li><a class="dropdown-item" href='{{route('login')}}'>Join as Organization</a></li>
-              <li><a class="dropdown-item" href='{{route('login')}}'>Join as Parents</a></li>
+              <li><a class="dropdown-item" href='{{route('showRegisterForm')}}'>Join as Tutor</a></li>
+              <li><a class="dropdown-item" href='{{route('showRegisterForm')}}'>Join as Student</a></li>
+              <li><a class="dropdown-item" href='{{route('showRegisterForm')}}'>Join as Organization</a></li>
+              <li><a class="dropdown-item" href='{{route('showRegisterForm')}}'>Join as Parents</a></li>
             </ul>
           </div>
          </div>
