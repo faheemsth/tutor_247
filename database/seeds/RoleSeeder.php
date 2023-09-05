@@ -3,7 +3,7 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
-use DB;
+use Illuminate\Support\Facades\DB;
 
 class RoleSeeder extends Seeder
 {
@@ -16,30 +16,35 @@ class RoleSeeder extends Seeder
     {
         DB::table('roles')->insert([
             [
-                'id' => 1, 
+                'id' => 1,
                 'name' => 'Super Admin',
                 'guard_name' => 'web',
             ],
             [
-                'id' => 2, 
+                'id' => 2,
                 'name' => 'Admin',
                 'guard_name' => 'web',
             ],
             [
-                'id' => 3, 
-                'name' => 'Project Manager',
+                'id' => 3,
+                'name' => 'Tutor',
                 'guard_name' => 'web',
             ],
             [
-                'id' => 4, 
-                'name' => 'Sales Manager',
+                'id' => 4,
+                'name' => 'Student',
                 'guard_name' => 'web',
             ],
             [
-                'id' => 5, 
-                'name' => 'Member',
+                'id' => 5,
+                'name' => 'Parent',
                 'guard_name' => 'web',
-            ]
+            ],
+            [
+                'id' => 6,
+                'name' => 'Ogranization',
+                'guard_name' => 'web',
+            ],
         ]);
     }
 }

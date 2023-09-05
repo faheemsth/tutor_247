@@ -52,8 +52,81 @@ class User extends Authenticatable
         $roles = [];
         foreach ($this->getRoleNames() as $key => $role) {
             $roles[$key] = $role;
+
         }
 
         return $roles;
     }
+    /*
+     Tables Relationships
+    */
+    public function subjects(){
+        return $this->hasmany(Subject::class);
+    }
+
+    public function tutorQualification(){
+        return $this->hasmany(tutorQualification::class);
+    }
+    public function tutorExperience(){
+        return $this->hasmany(tutorExperience::class);
+    }
+    public function tutorAvailibility(){
+        return $this->hasone(tutorAvailibility::class);
+    }
+    public function tutorSubjectOffer(){
+        return $this->hasmany(tutorSubjectOffer::class);
+    }
+    public function booking(){
+        return $this->hasone(Booking::class);
+    }
+    public function creditHours(){
+        return $this->hasmany(creditHours::class);
+    }
+    public function role(){
+        return $this->hasone(Role::class);
+    }
+    public function level(){
+        return $this->hasmany(Level::class);
+    }
+    public function userAccountDetails(){
+        return $this->hasmany(UserAccountDetail::class);
+    }
+    public function wallet(){
+        return $this->hasone(Wallet::class);
+    }
+    public function companyWallet(){
+        return $this->hasone(CompanyWallet::class);
+    }
+    public function transaction(){
+        return $this->hasmany(Transaction::class);
+    }
+    public function orders(){
+        return $this->hasmany(Order::class);
+    }
+    public function tutorReview(){
+        return $this->hasone(TutorReview::class);
+    }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

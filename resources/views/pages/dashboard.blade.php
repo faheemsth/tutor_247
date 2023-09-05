@@ -10,7 +10,7 @@
         <link rel="stylesheet" href="{{ asset('plugins/chartist/dist/chartist.min.css') }}">
     @endpush
 
-    		 
+
     @push('script')
         <script src="{{ asset('plugins/owl.carousel/dist/owl.carousel.min.js') }}"></script>
         <script src="{{ asset('plugins/chartist/dist/chartist.min.js') }}"></script>
@@ -23,10 +23,11 @@
         <script src="{{ asset('plugins/amcharts/serial.js') }}"></script>
         <script src="{{ asset('plugins/amcharts/themes/light.js') }}"></script>
 
-
+<!--
         <script src="{{ asset('js/widget-statistic.js') }}"></script>
         <script src="{{ asset('js/widget-data.js') }}"></script>
         <script src="{{ asset('js/dashboard-charts.js') }}"></script>
+-->
 
     @endpush
 @endsection

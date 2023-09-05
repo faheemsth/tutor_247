@@ -5,6 +5,7 @@ use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\Auth\ForgotPasswordController;
 use App\Http\Controllers\Auth\ResetPasswordController;
+use App\Http\Controllers\FrontendController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\RolesController;
@@ -20,12 +21,35 @@ use App\Http\Controllers\PermissionController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('/', function () { return view('home'); });
+
+// *********************************************************************************************
+// *                               Guest Pages Routes
+// *********************************************************************************************
+//Route::get('/', function () { return view('home'); });
+Route::get('/', [FrontendController::class, 'index'])->name('index');
+Route::get('/find-tutor', [FrontendController::class, 'findTutor'])->name('findTutor');
+Route::get('/student-apply-steps', [FrontendController::class, 'studentApplySteps'])->name('studentApplySteps');
+Route::get('/tutor-apply-steps', [FrontendController::class, 'tutorApplySteps'])->name('tutorApplySteps');
+Route::get('/organization-apply-steps', [FrontendController::class, 'organizationApplySteps'])->name('organizationApplySteps');
+Route::get('/prices', [FrontendController::class, 'prices'])->name('prices');
+Route::get('/blogs', [FrontendController::class, 'blogs'])->name('blogs');
+Route::get('/faq', [FrontendController::class, 'faq'])->name('faq');
 
 
-Route::get('login', [LoginController::class,'showLoginForm'])->name('login');
+
+// *********************************************************************************************
+// *                               Signup , Login in and Reset Password Routes
+// *********************************************************************************************
+Route::get('/register', [RegisterController::class, 'showRegisterForm'])->name('showRegisterForm');
+Route::get('/login-roles', [LoginController::class, 'loginRoles'])->name('login-roles');
+Route::get('/login', [LoginController::class,'showLoginForm'])->name('login');
 Route::post('login', [LoginController::class,'login']);
-Route::post('register', [RegisterController::class,'register']);
+
+//  Route::get('/login-1', function () { return view('pages.login'); });
+//  Route::post('register', [RegisterController::class,'register']);
+//  Route::get('login', [LoginController::class,'showLoginForm'])->name('login');
+//  Route::post('login', [LoginController::class,'login']);
+
 
 Route::get('password/forget',  function () {
 	return view('pages.forgot-password');
@@ -44,10 +68,16 @@ Route::group(['middleware' => 'auth'], function(){
 	Route::get('/logout', [LoginController::class,'logout']);
 
 
-	// Catagories dashboard route
-	Route::get('/dashboard', function () {
-		return view('pages.dashboard');
-	})->name('dashboard');
+	Route::group(['middleware' => 'can:dashboard|manage_user'], function(){
+		// Catagories dashboard route
+		Route::get('/dashboard', function () {
+			return view('pages.dashboard');
+		})->name('dashboard');
+	});
+
+	
+
+
 
     // Profile route
     Route::get('/profile', function () { return view('pages.profile'); });
@@ -91,5 +121,6 @@ Route::group(['middleware' => 'auth'], function(){
 });
 
 
-Route::get('/register', function () { return view('pages.register'); });
-Route::get('/login-1', function () { return view('pages.login'); });
+
+
+
