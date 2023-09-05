@@ -23,9 +23,9 @@
    <!-- Styles -->
    <link rel="stylesheet" href="{{ asset('assets/css/Login.css') }}">
    <link rel="stylesheet" href="{{ asset('assets/css/card2.css') }}">
+   <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
    <link rel="stylesheet" href="{{ asset('assets/css/findatutor.css') }}">
    <link rel="stylesheet" href="{{ asset('assets/css/find-tutor.css') }}">
-   <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
 
     
     <!-- Slick slider CSS  -->
@@ -36,6 +36,7 @@
 
     <!-- Styles -->
     {{-- <link href="{{ asset('css/app.css') }}" rel="stylesheet"> --}}
+    {{-- <link rel="stylesheet" href="{{ asset('assets/css/intlInputPhone.min.css')}}"> --}}
 </head>
 <body>
     <div id="app">
