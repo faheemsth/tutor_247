@@ -1,6 +1,11 @@
 @extends('layouts.app')
 
 @section('content')
+    <style>
+        .form-group input:focus{
+            color: black
+        }
+    </style>
     <div class="container-fluid student-login-title text-center  mt-5">
         <div class="row">
             <div class="col">
@@ -53,7 +58,7 @@
                                 </div>
 
                                 <div class="password-data d-none">
-                                    <div class="form-group">
+                                    <div class="form-group" style="margin:1rem;">
                                         <input id="password" type="password" id="password" placeholder="Password"
                                             class="form-control bg-white @error('password') is-invalid @enderror" name="password"
                                             value="" required>
