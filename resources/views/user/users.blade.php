@@ -44,7 +44,7 @@
                 <div class="card-header justify-content-between">
                     <h3>{{ __('Users')}}</h3>
                     <div class="btn btn-primary px-2 py-2" style="height: max-content;">
-                    <a href="/addnew" class="text-light"><i class="fa-solid fa-user-plus m-auto"></i></a>
+                    <a href="/user/create" class="text-light"><i class="fa-solid fa-user-plus m-auto"></i></a>
                     </div>
                     
                 </div>

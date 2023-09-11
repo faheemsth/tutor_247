@@ -20,7 +20,7 @@ class UserController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
-    public function index(): View
+    public function index()
     {
         $users = User::get();
 
@@ -28,20 +28,25 @@ class UserController extends Controller
     }
 
 
-    public function adduser(Request $user)
+    public function create()
     {
-       $user->validate(
-        [
-            'first_name'=>'required',
-            'last_name'=>'required',
-            'email'=>'required',
-            'role_id'=>'required'
-        ]
-        );
-
-            $newuser = user::create($user->all());
-            return redirect()->route('addnew');
+        return view('/user.adduser'); 
     }
+
+
+    public function store(Request $request){
+        $request->validate([
+                'first_name'=>'required',
+                'last_name'=>'required',
+                'password'=>'required',
+                'email'=>'required'
+            ]);
+
+            $newuser = User::create($request->all());
+            // dd($newuser);
+            return redirect('/users');
+    }
+        
 }
 //     /**
 //      * Show User List

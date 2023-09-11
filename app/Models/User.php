@@ -15,10 +15,12 @@ class User extends Authenticatable
     use HasRoles;
 
     protected $fillable=[
-        'userfirstname',
-        'userlastname',
-        'useremail',
-        'userrole'
+        'first_name',
+        'last_name',
+        'password',
+        'phone',
+        'email',
+        'role_id'
     ];
 
     // /**
