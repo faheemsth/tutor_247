@@ -20,7 +20,17 @@ class User extends Authenticatable
         'password',
         'phone',
         'email',
-        'role_id'
+        'role_id',
+        'gender',
+        'dob',
+        'facebook_link',
+        'linkedin_link',
+        'twitter_link',
+        'status',
+        'profile_description',
+        'image',
+        'address'
+
     ];
 
     // /**

@@ -6,6 +6,7 @@
 <link rel="stylesheet" href="{{ asset('plugins/DataTables/datatables.min.css') }}">
 <link rel="stylesheet" href="{{ asset('vendor/bootstrap/css/bootstrap.css') }}">
 <link rel="stylesheet" href="{{ asset('assets/webicons/css/all.css') }}">
+<link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
 @endpush
 
 
@@ -39,7 +40,7 @@
         <!-- start message area-->
         @include('include.message')
         <!-- end message area-->
-        <div class="col-md-12">
+        <div class="col-md-12  user-table-data">
             <div class="card p-3">
                 <div class="card-header justify-content-between">
                     <h3>{{ __('Users')}}</h3>
@@ -49,9 +50,10 @@
                     
                 </div>
                 <div class="card-body">
-                    <table id="user_table" class="table">
+                    <table id="user_table" class="table table-bordered">
                         <thead>
                             <tr>
+                            <th>{{ __('Sr.No')}}</th>
                                 <th>{{ __('First Name')}}</th>
                                 <th>{{ __('Last Name')}}</th>
                                 <th>{{ __('Email')}}</th>
@@ -64,6 +66,7 @@
                             @forelse($users as $user)
 
                             <tr>
+                                <td>{{ $loop->index+1 }}</td>
                                 <td>{{ $user->first_name }}</td>
                                 <td>{{ $user->last_name }}</td>
                                 <td>{{ $user->email }}</td>
@@ -75,11 +78,9 @@
                                     </div>
                                 </td>
                                 <td>
-                                    <div class=" btn btn-primary px-1 py-1" style="height: max-content;">
-                                    <i class="fa-regular fa-pen-to-square m-auto"></i>
-                                    </div>
-                                    <div class="btn btn-danger px-1 py-1" style="height: max-content;">
-                                    <i class="fa-solid fa-trash-can m-auto"></i>
+                                    <div class="d-flex gap-2">
+                                        <a href="/user/{{ $user->id }}/edit" class="btn btn-primary btn-sm" style="height: max-content;"><i class="fa-regular fa-pen-to-square m-auto"></i></a>
+                                        <a href="/user/{{ $user->id }}/delete" class="btn btn-danger btn-sm" style="height: max-content;"><i class="fa-solid fa-trash-can m-auto"></i></a>
                                     </div>
                                 </td>
 

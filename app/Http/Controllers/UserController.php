@@ -30,23 +30,54 @@ class UserController extends Controller
 
     public function create()
     {
-        return view('/user.adduser'); 
+        return view('/user.adduser');
     }
 
 
-    public function store(Request $request){
+    public function store(Request $request)
+    {
         $request->validate([
-                'first_name'=>'required',
-                'last_name'=>'required',
-                'password'=>'required',
-                'email'=>'required'
-            ]);
+            'first_name' => 'required',
+            'last_name' => 'required',
+            'password' => 'required',
+            'email' => 'required'
+        ]);
 
-            $newuser = User::create($request->all());
-            // dd($newuser);
-            return redirect('/users');
+        $newuser = User::create($request->all());
+        // dd($newuser);
+        return redirect('/users');
     }
-        
+
+    public function edit($id)
+    {
+        $user = user::where('id', $id)->first();
+        return view('user/edituser', ['users' => $user]);
+    }
+
+    public function update(Request $request, $id)
+    {
+
+        // dd($request);
+        $request->validate([
+            'first_name' => 'required',
+            'last_name' => 'required',
+            'password' => 'required',
+            'email' => 'required'
+        ]);
+
+        $edituser = User::where('id', $id)->first();
+        $edituser->update($request->all());
+        return redirect('/users');
+        // dd($id);
+
+    }
+
+    public function delete($id)
+    {
+        $deleteuser = User::where('id', $id)->first();
+        $deleteuser->delete();
+        return redirect('/users');
+    }
 }
 //     /**
 //      * Show User List

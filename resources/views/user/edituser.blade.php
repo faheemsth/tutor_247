@@ -9,12 +9,13 @@
 @endpush
 
 
-<form action="/user/store" method="POST" enctype="multipart/form-data">
+<form action="/user/{{ $users->id }}/update" method="POST" enctype="multipart/form-data">
     @csrf
+    @method('PUT')
     <div class="row">
         <div class="mb-3 col-md-6">
             <label class="form-label">First Name</label>
-            <input type="text" class="form-control" id="first-name" name="first_name" value="{{ old('first_name') }}">
+            <input type="text" class="form-control" id="first-name" name="first_name" value="{{ $users->first_name }}">
             @if($errors->has('first_name'))
             <span class="text-danger">{{ $errors->first('first_name') }}</span>
             @endif
@@ -22,7 +23,7 @@
         </div>
         <div class="mb-3 col-md-6">
             <label class="form-label">Last Name</label>
-            <input type="text" class="form-control" id="last-name" name="last_name" value="{{ old('last_name') }}">
+            <input type="text" class="form-control" id="last-name" name="last_name" value="{{ $users->last_name }}">
             @if($errors->has('last_name'))
             <span class="text-danger">{{ $errors->first('last_name') }}</span>
             @endif
@@ -38,36 +39,36 @@
         </div>
         <div class="mb-3 col-md-6">
             <label class="form-label">Phone</label>
-            <input type="text" class="form-control" id="user-phone" name="phone" value="{{ old('phone') }}">
+            <input type="text" class="form-control" id="user-phone" name="phone" value="{{ $users->phone }}">
         </div>
     </div>
 
     <div class="row">
         <div class="mb-3 col-md-6">
             <label class="form-label">Date of Birth</label>
-            <input type="text" class="form-control" id="dob" name="dob" value="{{ old('dob') }}">
+            <input type="text" class="form-control" id="dob" name="dob" value="{{ $users->dob }}">
         </div>
         <div class="mb-3 col-md-6">
             <label class="form-label">Gender</label>
-            <input type="text" class="form-control" id="user-gender" name="gender" value="{{ old('gender') }}">
+            <input type="text" class="form-control" id="user-gender" name="gender" value="{{ $users->gender }}">
         </div>
     </div>
 
     <div class="row">
         <div class="mb-3 col-md-6">
             <label class="form-label">Facebook Link</label>
-            <input type="text" class="form-control" id="facebook-link" name="facebook_link" value="{{ old('facebook_link') }}">
+            <input type="text" class="form-control" id="facebook-link" name="facebook_link" value="{{ $users->facebook_link }}">
         </div>
         <div class="mb-3 col-md-6">
             <label class="form-label">Linkedin Link</label>
-            <input type="text" class="form-control" id="linkedin-link" name="linkedin_link" value="{{ old('linkedin_link') }}">
+            <input type="text" class="form-control" id="linkedin-link" name="linkedin_link" value="{{ $users->linkedin_link }}">
         </div>
     </div>
 
     <div class="row">
         <div class="mb-3 col-md-6">
             <label class="form-label">Twitter Link</label>
-            <input type="text" class="form-control" id="twitter-link" name="twitter_link" value="{{ old('twitter_link') }}">
+            <input type="text" class="form-control" id="twitter-link" name="twitter_link" value="{{ $users->twitter_link }}">
         </div>
         <div class="mb-3 col-md-6">
             <label class="form-label">Status</label>
@@ -78,11 +79,11 @@
     <div class="row">
         <div class="mb-3 col-md-6">
             <label class="form-label">Profile Description</label>
-            <input type="text" class="form-control" id="profile-description" name="profile_description" value="{{ old('profile_description') }}">
+            <input type="text" class="form-control" id="profile-description" name="profile_description" value="{{ $users->profile_description }}">
         </div>
         <div class="mb-3 col-md-6">
             <label class="form-label">Address</label>
-            <input type="text" class="form-control" id="address" name="address" value="{{ old('address') }}">
+            <input type="text" class="form-control" id="address" name="address" value="{{ $users->address }}">
         </div>
     </div>
 
@@ -96,14 +97,14 @@
     <div class="row">
         <div class="mb-3 col-md-6">
             <label class="form-label">Email</label>
-            <input type="email" class="form-control" id="email" name="email" value="{{ old('email') }}">
+            <input type="email" class="form-control" id="email" name="email" value="{{ $users->email }}">
             @if($errors->has('email'))
             <span class="text-danger">{{ $errors->first('email') }}</span>
             @endif
         </div>
         <div class="mb-3 col-md-6">
             <label class="form-label">Role</label>
-            <input type="text" class="form-control" id="role" name="role_id" value="{{ old('role_id') }}"> 
+            <input type="text" class="form-control" id="role" name="role_id" value="{{ $users->role_id }}"> 
         </div>
     </div>
     <button type="submit">Submit</button>
