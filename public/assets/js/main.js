@@ -71,8 +71,69 @@ $(function () {
         }
     }
 
+    function nameValidation() {
+        var fname = $("#fname").val();
+        var lname = $("#lname").val();
+        var error_found = false;
+
+        if (fname.trim() == "") {
+            $(".fname-error").removeClass("d-none");
+            error_found = true;
+        }
+
+        if (lname.trim() == "") {
+            $(".lname-error").removeClass("d-none");
+            error_found = true;
+        }
+
+        if (error_found) {
+            return false;
+        }
+
+        return true;
+    }
+
+    function contactValidation() {
+        var phone = $(".phone-signup").val();
+        var email = $(".email-signup").val();
+        var error_found = false;
+
+        if (phone.trim() == "") {
+            $(".phone-error").removeClass("d-none");
+            error_found = true;
+        }
+
+        if (email == "") {
+            $(".email-signup-error").removeClass("d-none");
+            error_found = true;
+        }
+
+        if (error_found) {
+            return false;
+        }
+
+        return true;
+    }
+
+
+    
+
     // Handle the "Next" button click
     $(".next").click(function () {
+        // validate firstname and lastname
+        // if (form_count == 2) {
+        //     nameValidation();
+        // }
+
+        // if (form_count == 3) {
+        //     contactValidation();
+        // }
+
+        if(form_count == 4){
+            var subject_id = $(this).attr('data-subject-id');
+            $(".subject-id").val(subject_id);
+        }
+
         showNextStep();
     });
 
@@ -87,52 +148,44 @@ $(function () {
         alert("Form submitted!");
     });
 
+    $(".input-phone").intlInputPhone();
 
-    $('.input-phone').intlInputPhone();
+    ////////////////////////////////////Login////////////////////////////////
+    $("#email").on("click", function () {
+        $(".email-error").addClass("d-none");
+    });
 
+    $("#password").on("click", function () {
+        $(".password-error").addClass("d-none");
+    });
 
+    $(".login-with-password").on("click", function () {
+        var email = $("#email").val();
 
+        if (email.trim() == "") {
+            $(".email-error").removeClass("d-none");
+            return false;
+        }
+        $(".password-data").removeClass("d-none");
 
-
-////////////////////////////////////Login////////////////////////////////
-$("#email").on('click', function(){
-    $(".email-error").addClass('d-none');
-})
-
-$("#password").on('click', function(){
-    $(".password-error").addClass('d-none');
-})
-
-$(".login-with-password").on("click", function(){
-    var email = $("#email").val();
-
-    if(email.trim() == ''){
-        $(".email-error").removeClass('d-none');
+        $(this).addClass("d-none");
+        $(".login-btn").removeClass("d-none");
         return false;
-    }
-    $(".password-data").removeClass('d-none');
-    
-    $(this).addClass('d-none');
-    $('.login-btn').removeClass('d-none');
-    return false;
-});
+    });
 
+    $(".login-btn").on("click", function () {
+        var password = $("#password").val();
+        if (password.trim() == "") {
+            $(".password-error").removeClass("d-none");
+            return false;
+        }
 
-$('.login-btn').on('click', function(){
-    var password = $("#password").val();
-    if(password.trim() == ''){
-        $(".password-error").removeClass('d-none');
-        return false;
-    }
+        return true;
+    });
+    ////////////////////////////////////Login End////////////////////////////////
 
-    return true;
-})
-////////////////////////////////////Login End////////////////////////////////
-
-
-
-
-
-
-
+    $(".user-role").on("click", function () {
+        var role_id = $(this).attr("data-role-id");
+        $(".role_id").val(role_id);
+    });
 });
