@@ -41,6 +41,7 @@ Route::get('/faq', [FrontendController::class, 'faq'])->name('faq');
 // *                               Signup , Login in and Reset Password Routes
 // *********************************************************************************************
 Route::get('/register', [RegisterController::class, 'showRegisterForm'])->name('showRegisterForm');
+Route::post('register', [RegisterController::class,'register'])->name('register');
 Route::get('/login-roles', [LoginController::class, 'loginRoles'])->name('login-roles');
 Route::get('/login', [LoginController::class,'showLoginForm'])->name('login');
 Route::post('login', [LoginController::class,'login']);
