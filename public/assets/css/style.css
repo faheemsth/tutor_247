@@ -918,4 +918,23 @@ table tr td:last-child {
   }
   
 }
-  
+
+
+
+/* user admin side table */
+
+
+
+.user-table-data table {
+    border-color:#000 !important;
+}
+.user-table-data thead {
+    background-color: rgba(171, 254, 16, 1);
+}
+.user-table-data tr th {
+    color: #000;
+    border-color:#000;
+}
+.user-table-data tr td {
+    border-color: #000;
+}
