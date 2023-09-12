@@ -1,6 +1,11 @@
 @extends('layouts.app')
 
 @section('content')
+    <style>
+        .form-group input:focus{
+            color: black
+        }
+    </style>
     <div class="container-fluid student-login-title text-center  mt-5">
         <div class="row">
             <div class="col">
@@ -26,19 +31,16 @@
                     <div class="col-md-6 col-border ">
 
 
-                        <img src="./assets/images/Group.png" alt="" id="bg-shape-box">
-                        <img src="./assets/images/student-char.png" class="img-fluid rounded-start " style="height:200px"
-                            alt="...">
-                        <img src="./assets/images/pencil.png" alt="" id="bg-shape-pancil">
-                        <h5 class="card-title" style="line-height: 2;">I am a Student</h5>
-                        <p class="card-text" style="line-height: 0;">Have Lesson, Message Your Tutor </p>
-                        <p class="card-text" style="line-height: 0;">or Watch Your Lesson Back </p>
-
-                    </div>
-                    <!-- card body details -->
-                    <div class="col-md-6">
-                        <div
-                            class="card-body d-flex flex-column justify-content-center align-items-center position-relative">
+    <body>
+        <div class="auth-wrapper">
+            <div class="container-fluid h-100">
+                <div class="row flex-row h-100">
+                    <div class="col-xl-4 col-lg-4 col-md-4 m-auto">
+                        <div class="authentication-form mx-auto">
+                            <div class="logo-centered">
+                                <a href="http://radmin.rakibhstu.com"><img height="40" src="{{ asset('img/logo.png') }}" alt="RADMIN" ></a>
+                            </div>
+                            <p>Welcome back! </p>
                             <form method="POST" action="{{ route('login') }}">
                                 @csrf
                                 <div class="form-group" style="margin: 1em;text-align:left;">
@@ -56,7 +58,7 @@
                                 </div>
 
                                 <div class="password-data d-none">
-                                    <div class="form-group">
+                                    <div class="form-group" style="margin:1rem;">
                                         <input id="password" type="password" id="password" placeholder="Password"
                                             class="form-control bg-white @error('password') is-invalid @enderror" name="password"
                                             value="" required>
