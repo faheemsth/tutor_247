@@ -50,12 +50,10 @@ class Handler extends ExceptionHandler
      */
     public function render($request, Throwable $exception)
     {
-        // check api guard for unauthorized responses
-        /*if(auth()->guard('api')->check()) {
-            return response()->json([
-             'message' => 'Sorry! This action is unauthorized'
-            ],401);
-        }*/
+        if ($this->isHttpException($exception) && $exception->getStatusCode() == 404) {
+            return response()->view('errors.404', ['exception' => $exception->getStatusCode()], 404);
+        }
+
         return parent::render($request, $exception);
     }
 }

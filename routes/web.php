@@ -10,6 +10,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\RolesController;
 use App\Http\Controllers\PermissionController;
+use Illuminate\Support\Facades\Auth;
 
 /*
 |--------------------------------------------------------------------------
@@ -35,8 +36,6 @@ Route::get('/prices', [FrontendController::class, 'prices'])->name('prices');
 Route::get('/blogs', [FrontendController::class, 'blogs'])->name('blogs');
 Route::get('/faq', [FrontendController::class, 'faq'])->name('faq');
 
-
-
 // *********************************************************************************************
 // *                               Signup , Login in and Reset Password Routes
 // *********************************************************************************************
@@ -57,10 +56,13 @@ Route::get('password/forget',  function () {
 })->name('password.forget');
 Route::post('password/email', [ForgotPasswordController::class,'sendResetLinkEmail'])->name('password.email');
 Route::get('password/reset/{token}', [ResetPasswordController::class,'showResetForm'])->name('password.reset');
+Route::get('password/reset/{token}', [ResetPasswordController::class, 'showResetForm'])->name('auth.passwords.reset');
 Route::post('password/reset', [ResetPasswordController::class,'reset'])->name('password.update');
 
 
-
+Route::get('/email/verify', 'auth\VerificationController@show')->name('verification.notice');
+Route::get('/email/verify/{id}/{hash}', 'auth\VerificationController@verify')->name('verification.verify')->middleware(['signed']);
+Route::post('/email/resend', 'auth\VerificationController@resend')->name('verification.resend');
 
 // *********************************************************************************************
 // *                               Super Admin Routes
@@ -68,18 +70,11 @@ Route::post('password/reset', [ResetPasswordController::class,'reset'])->name('p
 Route::group(['middleware' => 'auth'], function(){
 	Route::get('/logout', [LoginController::class,'logout']);
 
-
-	Route::group(['middleware' => 'can:dashboard|manage_user'], function(){
-		// Catagories dashboard route
-		Route::get('/dashboard', function () {
+    Route::group(['middleware' => ['verified']], function() {
+        Route::get('/dashboard', function () {
 			return view('pages.dashboard');
 		})->name('dashboard');
-	});
-
-	
-
-
-
+    });
     // Profile route
     Route::get('/profile', function () { return view('pages.profile'); });
 
@@ -91,7 +86,7 @@ Route::group(['middleware' => 'auth'], function(){
 		Route::post('/user/store', [UserController::class,'store'])->name('store-user');
 		Route::get('/user/{id}/edit', [UserController::class,'edit']);
 		Route::put('/user/{id}/update', [UserController::class,'update']);
-		Route::get('/user/{id}/delete', [UserController::class, 'delete']); 
+		Route::get('/user/{id}/delete', [UserController::class, 'delete']);
 	});
 
 	//only those have manage_role permission will get access

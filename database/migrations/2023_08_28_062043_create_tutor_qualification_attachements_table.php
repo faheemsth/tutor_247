@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('tutor_qualification_attachements', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('qualification_id')->constrained('turor_qualifications');
+            $table->unsignedBigInteger('qualification_id')->constrained('turor_qualifications');
             $table->string('attachement',255);
             $table->timestamps();
         });

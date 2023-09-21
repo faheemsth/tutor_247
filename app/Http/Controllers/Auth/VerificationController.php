@@ -4,8 +4,9 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
+use Illuminate\Contracts\Session\Session;
 use Illuminate\Foundation\Auth\VerifiesEmails;
-
+use Illuminate\Http\Request;
 class VerificationController extends Controller
 {
     /*
@@ -39,4 +40,14 @@ class VerificationController extends Controller
         $this->middleware('signed')->only('verify');
         $this->middleware('throttle:6,1')->only('verify', 'resend');
     }
+    public function show(Request $request)
+    {
+        if ($request->user()->hasVerifiedEmail()) {
+            return redirect($this->redirectPath());
+        } else {
+            session()->put('resent', 'This is a message!');
+            return view('verification.notice');
+        }
+    }
+
 }

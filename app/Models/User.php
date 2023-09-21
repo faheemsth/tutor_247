@@ -2,13 +2,14 @@
 
 namespace App\Models;
 
+use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Support\Facades\Hash;
 use Laravel\Passport\HasApiTokens;
 use Spatie\Permission\Traits\HasRoles;
 
-class User extends Authenticatable
+class User extends Authenticatable implements MustVerifyEmail
 {
     use HasApiTokens;
     use Notifiable;
@@ -32,7 +33,9 @@ class User extends Authenticatable
         'address'
 
     ];
-
+    protected $casts = [
+        'email_verified_at' => 'datetime',
+    ];
     // /**
     //  * The attributes that are mass assignable.
     //  *

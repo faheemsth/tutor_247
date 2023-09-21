@@ -16,8 +16,8 @@ return new class extends Migration
         //
         Schema::create('blogs', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('author_id')->constrained('users');
-            $table->foreignId('category_id')->constrained('category');
+            $table->unsignedBigInteger('author_id')->constrained('users');
+            $table->unsignedBigInteger('category_id')->constrained('category');
             $table->string('title');
             $table->string('content');
             $table->enum('status',['Draft','Published', 'Pending']);

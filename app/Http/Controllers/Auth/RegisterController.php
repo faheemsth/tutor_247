@@ -6,9 +6,10 @@ use App\Http\Controllers\Controller;
 use App\Models\User;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Foundation\Auth\RegistersUsers;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
-
+use Illuminate\Http\Request;
 class RegisterController extends Controller
 {
     /*
@@ -71,7 +72,7 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        return User::create([
+        $user=User::create([
             'first_name' => $data['fname'],
             'last_name' => $data['lname'],
             'phone' => $data['phone'],
@@ -80,5 +81,9 @@ class RegisterController extends Controller
             'role_id' => $data['role_id'],
             'password' => Hash::make($data['password']),
         ]);
+
+        Auth::login($user);
+
+        return $user;
     }
 }

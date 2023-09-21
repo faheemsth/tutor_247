@@ -22,11 +22,11 @@ class CreateUsersTable extends Migration
             $table->string('password', 100);
             $table->string('phone', 100);
             $table->enum('gender',['Male','Female']);
-            $table->date('dob');
+            $table->date('dob')->nullable();
             $table->string('facebook_link', 100);
             $table->string('linkedin_link', 100);
             $table->string('twitter_link', 100);
-            $table->foreignId('role_id')->constrained('roles');
+            $table->unsignedBigInteger('role_id')->constrained('roles');
             $table->enum('status',['Pending','Active', 'InActive']);
             $table->text('profile_description');
             $table->string('image',100);
