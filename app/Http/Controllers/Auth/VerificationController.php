@@ -7,6 +7,9 @@ use App\Providers\RouteServiceProvider;
 use Illuminate\Contracts\Session\Session;
 use Illuminate\Foundation\Auth\VerifiesEmails;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
+
 class VerificationController extends Controller
 {
     /*
@@ -43,7 +46,28 @@ class VerificationController extends Controller
     public function show(Request $request)
     {
         if ($request->user()->hasVerifiedEmail()) {
-            return redirect($this->redirectPath());
+
+
+            $permissions= DB::table('permissions')
+            ->leftjoin('role_has_permissions', 'permissions.id', '=', 'role_has_permissions.permission_id')
+            ->where('role_id',Auth::user()->role_id)
+            ->get();
+
+       foreach($permissions as $permission){
+           if($permission->name =='manage_role' || $permission->name =='manage_permission' || $permission->name =='manage_user' || $permission->name =='super_admin_dashboard' && Auth::user()->role_id == "1")
+           {
+               return redirect('supper_admin_dashboard');
+           }elseif($permission->name =='manage_role' || $permission->name =='manage_permission' || $permission->name =='manage_user' || $permission->name =='super_admin_dashboard' && Auth::user()->role_id == "2")
+           {
+               return redirect('admin_dashboard');
+           }elseif($permission->name =='manage_role' || $permission->name =='manage_permission' || $permission->name =='manage_user' || $permission->name =='tutor_dashboard' && Auth::user()->role_id == "3")
+           {
+               return redirect('tutor_dashboard');
+           }elseif($permission->name =='manage_role' || $permission->name =='manage_permission' || $permission->name =='manage_user' || $permission->name =='student_dashboard' && Auth::user()->role_id == "4")
+           {
+            return redirect('student_dashboard');
+           }
+        }
         } else {
             session()->put('resent', 'This is a message!');
             return view('verification.notice');

@@ -16,20 +16,45 @@ class PermissionSeeder extends Seeder
     {
         DB::table('permissions')->insert([
             [
-                'id' => 2,
+                'id' => 1,
                 'name' => 'manage_role',
                 'guard_name' => 'web',
             ],
             [
-                'id' => 3,
+                'id' => 2,
                 'name' => 'manage_permission',
                 'guard_name' => 'web',
             ],
             [
-                'id' => 4,
+                'id' => 3,
                 'name' => 'manage_user',
                 'guard_name' => 'web',
-            ]
+            ],
+            [
+                'id' => 4,
+                'name' => 'super_admin_dashboard',
+                'guard_name' => 'web',
+            ],
+            [
+                'id' => 5,
+                'name' => 'student_dashboard',
+                'guard_name' => 'web',
+            ],
+            [
+                'id' => 6,
+                'name' => 'parent_dashboard',
+                'guard_name' => 'web',
+            ],
+            [
+                'id' => 7,
+                'name' => 'organization_dashboard',
+                'guard_name' => 'web',
+            ],
+            [
+                'id' => 8,
+                'name' => 'tutor_dashboard',
+                'guard_name' => 'web',
+            ],
         ]);
     }
 }

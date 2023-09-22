@@ -10,6 +10,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\RolesController;
 use App\Http\Controllers\PermissionController;
+use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Auth;
 
 /*
@@ -56,7 +57,7 @@ Route::get('password/forget',  function () {
 })->name('password.forget');
 Route::post('password/email', [ForgotPasswordController::class,'sendResetLinkEmail'])->name('password.email');
 Route::get('password/reset/{token}', [ResetPasswordController::class,'showResetForm'])->name('password.reset');
-Route::get('password/reset/{token}', [ResetPasswordController::class, 'showResetForm'])->name('auth.passwords.reset');
+//Route::get('password/reset/{token}', [ResetPasswordController::class, 'showResetForm'])->name('auth.passwords.reset');
 Route::post('password/reset', [ResetPasswordController::class,'reset'])->name('password.update');
 
 
@@ -69,12 +70,25 @@ Route::post('/email/resend', 'auth\VerificationController@resend')->name('verifi
 // *********************************************************************************************
 Route::group(['middleware' => 'auth'], function(){
 	Route::get('/logout', [LoginController::class,'logout']);
+    Route::middleware(['verified'])->group(function () {
 
-    Route::group(['middleware' => ['verified']], function() {
         Route::get('/dashboard', function () {
-			return view('pages.dashboard');
-		})->name('dashboard');
+            return view('pages.dashboard');
+        })->name('dashboard');
+
+        Route::get('/admin_supper_admin_dashboard', function () {
+            return view('pages.dashboard');
+        })->name('dashboard');
+
+        Route::get('/student_dashboard', function () {
+            return view('pages.dashboard');
+        })->name('dashboard');
+        Route::get('/parent_dashboard', function () {
+            return view('pages.dashboard.parentdashboard');
+        })->name('dashboard');
+
     });
+
     // Profile route
     Route::get('/profile', function () { return view('pages.profile'); });
 
