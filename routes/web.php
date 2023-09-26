@@ -75,17 +75,12 @@ Route::group(['middleware' => 'auth'], function(){
         Route::get('/dashboard', function () {
             return view('pages.dashboard');
         })->name('dashboard');
-
-        Route::get('/admin_supper_admin_dashboard', function () {
-            return view('pages.dashboard');
-        })->name('dashboard');
-
         Route::get('/student_dashboard', function () {
             return view('pages.dashboard');
-        })->name('dashboard');
+        });
         Route::get('/parent_dashboard', function () {
-            return view('pages.dashboard.parentdashboard');
-        })->name('dashboard');
+            return view('pages.dashboard');
+        });
 
     });
 
