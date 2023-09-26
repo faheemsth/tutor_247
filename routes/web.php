@@ -10,6 +10,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\RolesController;
 use App\Http\Controllers\PermissionController;
+use App\Http\Controllers\TutorExperienceController;
 use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Auth;
 
@@ -72,18 +73,46 @@ Route::group(['middleware' => 'auth'], function(){
 	Route::get('/logout', [LoginController::class,'logout']);
     Route::middleware(['verified'])->group(function () {
 
+
         Route::get('/dashboard', function () {
             return view('pages.dashboard');
         })->name('dashboard');
+
+        Route::get('/admin_dashboard', function () {
+            return view('pages.dashboard');
+        });
+
+        Route::get('/tutor_dashboard', function () {
+            return view('pages.dashboard.tutordashboard');
+        });
+
         Route::get('/student_dashboard', function () {
-            return view('pages.dashboard');
+            return view('frontend/home');
         });
+
         Route::get('/parent_dashboard', function () {
-            return view('pages.dashboard');
+            return view('pages.dashboard.parentdashboard');
         });
+
+        Route::get('/organization_dashboard', function () {
+            return view('pages.dashboard.organizaton');
+        });
+
+
+     //    tutor profile
+     Route::get('/tutor_profile', [TutorExperienceController::class, 'tutor_profile']);
+    //    tutor profile update
+        Route::get('/update_tutor', [TutorExperienceController::class, 'update_tutor']);
+        Route::post('/update_tutor_post', [TutorExperienceController::class, 'update_tutor_post']);
+        Route::get('/tutor_payments_post', [TutorExperienceController::class, 'tutor_payments_post']);
+
+    //          //    parent profile
+    //  Route::get('/parent_profile', [ParentController::class, 'parent_profile']);
+    //  //    parent profile update
+    //      Route::get('/update_parent', [ParentController::class, 'update_parent']);
+    //      Route::post('/update_parent_post', [ParentController::class, 'update_parent_post']);
 
     });
-
     // Profile route
     Route::get('/profile', function () { return view('pages.profile'); });
 
