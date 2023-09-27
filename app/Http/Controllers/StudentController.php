@@ -7,22 +7,11 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 
-class ParentController extends Controller
+class StudentController extends Controller
 {
+    public function update_student_post(Request $request)
+    {
 
-    public function index(){
-        $students=User::where('role_id','4')->get();
-        return view('pages.dashboard.parentdashboard',compact('students'));
-    }
-    public function parent_profile(){
-        return view('pages.dashboard.profileparent');
-    }
-
-    public function parent_update(){
-        return view('pages.dashboard.profiledetailparent');
-    }
-
-    public function update_parent_post(Request $request){
         $image = $request->file('image');
         $imageName = time() . '_' . $image->getClientOriginalName();
 
@@ -48,27 +37,10 @@ class ParentController extends Controller
             'address' => $request->input('address'),
             'image' => 'images/' . $imageName,
         ]);
-        return redirect('parent_profile');
+        return redirect('student_dashboard');
     }
-    public function parent_add_student(Request $request){
-
-            $user=new User();
-            $user->first_name = $request->input('first_name');
-            $user->last_name = $request->input('last_name');
-            $user->email = $request->input('email');
-            $user->dob ='2000-01-01';
-            $user->phone ='123456789';
-            $user->password =Hash::make(1234);
-            $user->facebook_link ='https://www.google.com';
-            $user->linkedin_link ='https://www.google.com';
-            $user->twitter_link ='https://www.google.com';
-            $user->role_id =4;
-            $user->profile_description ='demo';
-            $user->image ='pic.jpg';
-            $user->address ='test';
-            $user->save();
-
-        return redirect('parent_profile');
+    public function student_profile()
+    {
+        return view('pages.dashboard.profilestudent');
     }
-
 }

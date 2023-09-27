@@ -9,13 +9,13 @@
             <div class="row hero-section">
               <div class="col-12 mt-5 col-lg-6 col-xl-6 hero-text-section" id="text-color">
                 <h1>Lorem ipsum dolor sit amet, consectetur.</h1>
-    
+
                 <div id="hero-focus">
                   <p class="px-2 fa-2x fw-bold">Lorem, ipsum</p>
                 </div>
                 <p class="py-2">Consectur adipiscing elitsedo eiusmod tempor incididuntem utaborate
                   dolore magna aliqua ad minim veniamque.</p>
-    
+
                 <div class="mb-5 pt-2 pb-4">
                   <a type="button" href='{{route('studentApplySteps')}}' class="btn px-4 py-2 mb-2" style="background:linear-gradient(93.86deg, #063B00 9.41%, #000000 98.3%);
                   ;
@@ -31,7 +31,7 @@
                 </div>
               </div>
               <div class="col-md-6 d-none d-lg-flex justify-content-center">
-    
+
                 <div class="shapes-parent py-5">
                   <div class="shapes">
                     <img src="./assets/images/Ellipse 40.png" alt="" srcset="" class="shape">
@@ -45,9 +45,9 @@
         </div>
       </section>
       <!-- hero Sec end  -->
-    
-    
-    
+
+
+
       <!-- Banner section  -->
       <div class="container-fluid py-3" style="background-color: rgba(0, 150, 255, 0.1);">
         <div class="row justify-content-lg-center gap-lg-5 py-3 banner-sec-home">
@@ -97,8 +97,8 @@
         </div>
       </div>
       <!-- Banner section end  -->
-    
-    
+
+
       <!-- Subject & Lang -->
       <div class="container-fluid lan-sec my-5">
         <div class="row justify-content-center">
@@ -211,7 +211,7 @@
         </div>
       </div>
       <!-- Subject & Lang end  -->
-    
+
       <!-- Why choose us start  -->
       <div class="container-fluid choose-us">
         <div class=" circle-box circle-box-1 d-none d-md-block"></div>
@@ -290,12 +290,12 @@
                 </div>
               </div>
             </div>
-            
+
           </div>
         </div>
       </div>
       <!-- Why choose us end  -->
-    
+
       <!-- Review Section  -->
       <div class="container-fluid py-5">
         <div class="row mb-2 py-md-5" id="review-section-head">
@@ -303,12 +303,12 @@
             <h1 class="review-link" id="text-color">4.5/5 Review
               <a href=""><img src="./assets/images/Vector (1).png" style="margin-top: -10px; margin-right: 5px;" alt="" srcset="" width="35px" >Trustpilot</a>
             </h1>
-            
+
           </div>
         </div>
         <div class="row py-3 justify-content-center">
           <div class="col-xl-8 col-md-10 col-12 text-center ">
-    
+
             <div class="card-center">
               <div>
                 <div class="card text-center review-card mx-auto" style="width: 16rem;">
@@ -327,7 +327,7 @@
                   </div>
                 </div>
               </div>
-    
+
               <div>
                 <div class="card text-center review-card mx-auto" style="width: 16rem;">
                   <div class="card-img-top px-4 pt-3 review-card mx-auto">
@@ -343,11 +343,11 @@
                   </div>
                 </div>
               </div>
-    
+
               <div>
                 <div class="card text-center review-card mx-auto" style="width: 16rem;">
                   <div class="card-img-top px-4 pt-3 review-card mx-auto">
-                    <p style="font-size: 15px;">Lorem ipsum dolor sit amet. Est magni cupiditate ad laboriosam vitae a dicta nisi qui corrupti laborum non repellat molestiae. 
+                    <p style="font-size: 15px;">Lorem ipsum dolor sit amet. Est magni cupiditate ad laboriosam vitae a dicta nisi qui corrupti laborum non repellat molestiae.
                     </p>
                     <div class="card-img-div">
                       <img src="./assets/images/Vector-1.png" class="mx-auto" alt="...">
@@ -359,11 +359,11 @@
                   </div>
                 </div>
               </div>
-    
+
               <div>
                 <div class="card text-center review-card mx-auto" style="width: 16rem;">
                   <div class="card-img-top px-4 pt-3 review-card mx-auto">
-                    <p style="font-size: 15px;">Lorem ipsum dolor sit amet. Est magni cupiditate ad laboriosam vitae a dicta nisi qui corrupti laborum non repellat molestiae. 
+                    <p style="font-size: 15px;">Lorem ipsum dolor sit amet. Est magni cupiditate ad laboriosam vitae a dicta nisi qui corrupti laborum non repellat molestiae.
                     </p>
                     <div class="card-img-div">
                       <img src="./assets/images/Vector-1.png" class="mx-auto" alt="...">
@@ -375,7 +375,7 @@
                   </div>
                 </div>
               </div>
-    
+
               <div>
                 <div class="card text-center review-card mx-auto" style="width: 16rem;">
                   <div class="card-img-top px-4 pt-3 review-card mx-auto">
@@ -415,7 +415,7 @@
         </div>
       </div>
       <!-- Review Section end  -->
-    
+
       <!-- Find tutor section -->
       <div class="container-fluid px-0" style="position: relative;overflow: hidden;">
         <div class="ellipse"></div>
@@ -456,9 +456,9 @@
               </div>
             </div>
           </nav>
-    
+
         </div>
       </div>
       <!-- Find tutor section end-->
-    
+
 @endsection

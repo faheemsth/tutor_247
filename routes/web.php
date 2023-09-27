@@ -7,9 +7,11 @@ use App\Http\Controllers\Auth\ForgotPasswordController;
 use App\Http\Controllers\Auth\ResetPasswordController;
 use App\Http\Controllers\FrontendController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\ParentController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\RolesController;
 use App\Http\Controllers\PermissionController;
+use App\Http\Controllers\StudentController;
 use App\Http\Controllers\TutorExperienceController;
 use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Auth;
@@ -81,30 +83,31 @@ Route::group(['middleware' => 'auth'], function(){
         Route::get('/admin_dashboard', function () {
             return view('pages.dashboard');
         });
-
-        Route::get('/tutor_dashboard', function () {
-            return view('pages.dashboard.tutordashboard');
-        });
-
-        Route::get('/student_dashboard', function () {
-            return view('frontend/home');
-        });
-
-        Route::get('/parent_dashboard', function () {
-            return view('pages.dashboard.parentdashboard');
-        });
-
-        Route::get('/organization_dashboard', function () {
-            return view('pages.dashboard.organizaton');
-        });
-
-
-     //    tutor profile
-     Route::get('/tutor_profile', [TutorExperienceController::class, 'tutor_profile']);
-    //    tutor profile update
+        //  tutor profile
+        Route::get('/tutor_dashboard', function () { return view('pages.dashboard.tutordashboard');});
+        Route::get('/tutor_profile', [TutorExperienceController::class, 'tutor_profile']);
         Route::get('/update_tutor', [TutorExperienceController::class, 'update_tutor']);
         Route::post('/update_tutor_post', [TutorExperienceController::class, 'update_tutor_post']);
         Route::get('/tutor_payments_post', [TutorExperienceController::class, 'tutor_payments_post']);
+
+        // students
+        Route::get('/student_dashboard', function () { return view('pages.dashboard.profiledetailstudent');});
+        Route::post('/update_student_post', [StudentController::class, 'update_student_post']);
+        Route::get('/student_profile', [StudentController::class, 'student_profile']);
+
+        // parents
+        Route::get('/parent_dashboard', [ParentController::class, 'index']);
+        Route::get('/parent_profile', [ParentController::class, 'parent_profile']);
+        Route::get('/parent_update', [ParentController::class, 'parent_update']);
+        Route::post('/update_parent_post', [ParentController::class, 'update_parent_post']);
+        Route::post('/parent_add_student', [ParentController::class, 'parent_add_student']);
+
+        // organization
+        Route::get('/organization_dashboard', function () { return view('pages.dashboard.organizaton');});
+
+
+
+
 
     //          //    parent profile
     //  Route::get('/parent_profile', [ParentController::class, 'parent_profile']);
