@@ -11,7 +11,7 @@ class ParentController extends Controller
 {
 
     public function index(){
-        $students=User::where('role_id','4')->get();
+        $students=User::where('role_id','4')->where('parent_id',Auth::id())->get();
         return view('pages.dashboard.parentdashboard',compact('students'));
     }
     public function parent_profile(){
@@ -66,6 +66,7 @@ class ParentController extends Controller
             $user->profile_description ='demo';
             $user->image ='pic.jpg';
             $user->address ='test';
+            $user->parent_id = Auth::id();
             $user->save();
 
         return redirect('parent_profile');

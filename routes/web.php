@@ -12,6 +12,7 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\RolesController;
 use App\Http\Controllers\PermissionController;
 use App\Http\Controllers\StudentController;
+use App\Http\Controllers\TransactionController;
 use App\Http\Controllers\TutorExperienceController;
 use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Auth;
@@ -39,6 +40,7 @@ Route::get('/organization-apply-steps', [FrontendController::class, 'organizatio
 Route::get('/prices', [FrontendController::class, 'prices'])->name('prices');
 Route::get('/blogs', [FrontendController::class, 'blogs'])->name('blogs');
 Route::get('/faq', [FrontendController::class, 'faq'])->name('faq');
+Route::get('/tutor_profile/{id}', [FrontendController::class, 'tutor_profile']);
 
 // *********************************************************************************************
 // *                               Signup , Login in and Reset Password Routes
@@ -94,6 +96,10 @@ Route::group(['middleware' => 'auth'], function(){
         Route::get('/student_dashboard', function () { return view('pages.dashboard.profiledetailstudent');});
         Route::post('/update_student_post', [StudentController::class, 'update_student_post']);
         Route::get('/student_profile', [StudentController::class, 'student_profile']);
+        Route::get('/book_tutor/{id}', [StudentController::class, 'book_tutor']);
+        Route::post('/book_tutor_post', [TransactionController::class, 'book_tutor_post']);
+
+
 
         // parents
         Route::get('/parent_dashboard', [ParentController::class, 'index']);

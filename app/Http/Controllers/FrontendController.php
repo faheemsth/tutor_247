@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class FrontendController extends Controller
@@ -12,7 +13,8 @@ class FrontendController extends Controller
     }
 
     public function findTutor(){
-        return view('frontend/find-tutor');
+        $tutors=User::where('role_id','3')->get();
+        return view('frontend/find-tutor',compact('tutors'));
     }
 
     public function studentApplySteps(){
@@ -38,4 +40,9 @@ class FrontendController extends Controller
     public function faq(){
         return view('frontend/faqs');
     }
+    public function tutor_profile($id){
+        $tutor=User::find($id);
+        return view('pages.dashboard.profiletutor',compact('tutor'));
+    }
+
 }

@@ -43,4 +43,13 @@ class StudentController extends Controller
     {
         return view('pages.dashboard.profilestudent');
     }
+
+    public function book_tutor($id)
+    {
+        $tutor=User::find($id);
+        return view('pages.dashboard.payments',compact('tutor'));
+    }
+
+
+
 }
