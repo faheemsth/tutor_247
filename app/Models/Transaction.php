@@ -11,7 +11,12 @@ class Transaction extends Model
     /*
      Tables Relationships
     */
-    public function users(){
-        return $this->belongsTo(User::class);
+    protected $guarded = [];
+
+    public function user(){
+        return $this->belongsTo(User::class,'user_id');
+    }
+    public function tutor(){
+        return $this->belongsTo(User::class,'tutor_id');
     }
 }

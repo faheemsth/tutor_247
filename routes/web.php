@@ -91,6 +91,9 @@ Route::group(['middleware' => 'auth'], function(){
         Route::get('/update_tutor', [TutorExperienceController::class, 'update_tutor']);
         Route::post('/update_tutor_post', [TutorExperienceController::class, 'update_tutor_post']);
         Route::get('/tutor_payments_post', [TutorExperienceController::class, 'tutor_payments_post']);
+        Route::get('/chat', [TutorExperienceController::class, 'Chat']);
+        Route::get('/verify_transaction/{id}/{id2}', [TutorExperienceController::class, 'verify_transaction']);
+        Route::get('/create', [ParentController::class, 'create']);
 
         // students
         Route::get('/student_dashboard', function () { return view('pages.dashboard.profiledetailstudent');});
@@ -107,6 +110,9 @@ Route::group(['middleware' => 'auth'], function(){
         Route::get('/parent_update', [ParentController::class, 'parent_update']);
         Route::post('/update_parent_post', [ParentController::class, 'update_parent_post']);
         Route::post('/parent_add_student', [ParentController::class, 'parent_add_student']);
+        Route::get('/show_student/{id}', [ParentController::class, 'show_student']);
+
+
 
         // organization
         Route::get('/organization_dashboard', function () { return view('pages.dashboard.organizaton');});

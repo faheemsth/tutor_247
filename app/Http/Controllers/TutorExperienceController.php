@@ -2,10 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Transaction;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Mail;
 
 class TutorExperienceController extends Controller
 {
@@ -54,6 +56,29 @@ class TutorExperienceController extends Controller
     {
         return view('pages.dashboard.payments');
     }
+
+    public function Chat()
+    {
+        $chats=Transaction::where('tutor_id', Auth::id())->with('user')->get();
+        return view('pages.dashboard.chat', compact('chats'));
+    }
+    public function verify_transaction($id, $id2)
+    {
+        $chats = Transaction::where('tutor_id', $id)->where('id', $id2)->first();
+        $data = array('name' => $chats->user->first_name);
+
+        Mail::send(['text' => 'pages/dashboard/mail'], $data, function ($message) use ($chats) {
+            $message->to($chats->user->email, $chats->user->first_name)->subject('Dear Student get Your Link and join meeting');
+            $message->from('sherazaleem015@gmail.com', 'tutor247');
+        });
+        if ($chats && $chats->status == 0) {
+            $chats->update(['status' => 1]);
+            return back();
+        }
+    }
+
+
+
 
 
 }
